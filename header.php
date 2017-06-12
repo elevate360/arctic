@@ -21,29 +21,57 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
+
+	<?php if( has_nav_menu( 'menu-1' ) ) :?>
+		<a class="skip-link screen-reader-text" href="#site-navigation"><?php esc_html_e( 'Skip to navigation', 'arctic' ); ?></a>
+	<?php endif;?>
+
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'arctic' ); ?></a>
 
+	<?php if( is_active_sidebar( 'sidebar-2' ) ) :?>
+		<a class="skip-link screen-reader-text" href="#tertiary"><?php esc_html_e( 'Skip to footer', 'arctic' ); ?></a>
+	<?php endif;?>
+
 	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
+		<div class="wrap">
+			<div class="site-branding">
+				<?php
+				arctic_custom_logo();
+				if ( is_front_page() && is_home() ) : ?>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<?php else : ?>
+					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<?php
+				endif;
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
+				$description = get_bloginfo( 'description', 'display' );
+				if ( $description || is_customize_preview() ) : ?>
+					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+				<?php
+				endif; ?>
+			</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'arctic' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
+			<?php if ( has_nav_menu( 'menu-1' ) ) :?>
+			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<?php
+					wp_nav_menu( array(
+						'theme_location' 	=> 'menu-1',
+						'menu_id' 			=> 'primary-menu',
+						'container_class'	=> 'menu-wrap',
+						'depth'				=> 1
+					) );
+				?>
+				<button id="sidebar-toggle" class="sidebar-toggle" aria-controls="secondary" aria-expanded="false">
+					<span class="sidebar-toggle-icon"></span>
+				</button>
+			</nav><!-- #site-navigation -->
+			<?php endif;?>
+
+		</div><!-- .wrap -->
 	</header><!-- #masthead -->
+
+	<?php get_template_part( 'template-parts/content', 'hero' ); ?>
+
+	<?php arctic_do_breadcrumb();?>
 
 	<div id="content" class="site-content">

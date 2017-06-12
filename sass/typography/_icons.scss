@@ -1,0 +1,37 @@
+.menu-toggle:before,
+.toggled .menu-toggle:before,
+.sub-menu-toggle:before,
+.social-links ul a:before,
+.search-form:before,
+.bypostauthor > .comment-body > .comment-meta:before,
+#cancel-comment-reply-link:before,
+.woocommerce-product-search:before,
+.null-instagram-feed .widget-title:before,
+.null-instagram-feed .widget-more-link a:before,
+.instagram-footer .widget-more-link a:before,
+.widget_latest_tweets_widget .widget-title:before,
+.widget_recent_entries li:before,
+.widget_archive li:before,
+.widget_pages li:before,
+.widget_recent_comments li:before,
+.widget_categories li:before,
+.widget-menu-toggle:before,
+.wpcf7-mail-sent-ok:before,
+.wpcf7-mail-sent-ng:before,
+.wpcf7-spam-blocked:before,
+.wpcf7-validation-errors:before {
+	display: inline-block;
+	font-family: "FontAwesome";
+	font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	speak: none;
+	text-align: center;
+	text-decoration: inherit;
+	text-transform: none;
+	vertical-align: top;
+	line-height: 1.5rem;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}

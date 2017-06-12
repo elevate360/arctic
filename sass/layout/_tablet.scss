@@ -1,0 +1,53 @@
+@media (min-width: 782px) {
+
+	@import "../navigation/menus-desktop";
+
+	.home .site-main,
+	.archive .site-main {
+		.entry {
+			float: left;
+			width: 50%;
+			height: 32vw;
+		}
+	}
+
+	.archive-title {
+		@include font-size(3);
+	}
+
+	.single,
+	.page {
+		.site-main {
+			max-width: 780px;
+			margin: 0 auto;
+		}
+	}
+
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url {
+		@include span( 3 of 9 );
+	}
+
+	.comment-form-url {
+		@include last;
+	}
+
+	.form-submit input[type="submit"] {
+		width: auto;
+	}
+
+	#footer-widget-1,
+	#footer-widget-2 {
+		@include span( 6 of 12 );
+	}
+
+	#footer-widget-2 {
+		@include last;
+	}
+
+	#secondary {
+		width: 30rem;
+	}
+
+}

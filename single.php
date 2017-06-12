@@ -10,24 +10,34 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<div class="wrap">
+			<main id="main" class="site-main" role="main">
 
-		<?php
-		while ( have_posts() ) : the_post();
+			<?php
+			while ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/content', get_post_format() );
+				get_template_part( 'template-parts/content', get_post_format() );
 
-			the_post_navigation();
+				if ( get_theme_mod( 'author_display', true ) == true ) {
+					get_template_part( 'template-parts/biography' );
+				}
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+				the_post_navigation( array(
+				    'prev_text'                  => __( '<span>&larr; previous post</span> %title', 'arctic' ),
+				    'next_text'                  => __( '<span>next post &rarr;</span> %title', 'arctic' ),
+				    'screen_reader_text'		 => __( 'Continue Reading', 'arctic' ),
+				) );
 
-		endwhile; // End of the loop.
-		?>
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
 
-		</main><!-- #main -->
+			endwhile; // End of the loop.
+			?>
+
+			</main><!-- #main -->
+		</div>
 	</div><!-- #primary -->
 
 <?php

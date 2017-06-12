@@ -55,7 +55,7 @@ module.exports = function (grunt) {
 					'x-poedit-sourcecharset': 'utf-8\n',
 					'x-poedit-searchpath-0': '.\n',
 					'x-poedit-keywordslist': '__;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n',
-					'x-textdomain-support': 'yes\n',
+					'x-textdomain-support': 'yes\n'
 				}
 			},
 			frontend: {
@@ -79,7 +79,7 @@ module.exports = function (grunt) {
 				},
 				files: [{
 					'style.css': 'sass/style.scss',
-					'css/editor-style.css': 'sass/editor-style.scss',
+					'assets/css/editor-style.css': 'sass/editor-style.scss'
 				}]
 			}
 		},
@@ -97,8 +97,8 @@ module.exports = function (grunt) {
 				dest: 'style.css'
 			},
 			editor: {
-				src: 'css/editor-style.css',
-				dest: 'css/editor-style.css'
+				src: 'assets/css/editor-style.css',
+				dest: 'assets/css/editor-style.css'
 			}
 		},
 
@@ -109,10 +109,22 @@ module.exports = function (grunt) {
 	            },
 	            files: {
 	            	'style.css': ['style.css'],
-	            	'css/editor-style.css': ['css/editor-style.css']
+	            	'assets/css/editor-style.css': ['assets/css/editor-style.css']
 	            }
 	        }
 	    },
+
+		cssmin: {
+			target: {
+				files: [{
+					expand: true,
+					cwd: './',
+					src: ['assets/css/*.css', '!assets/css/*.min.css'],
+					dest: './',
+					ext: '.min.css'
+				}]
+			}
+		},
 
 		// JavaScript linting with JSHint.
 		jshint: {
@@ -121,16 +133,33 @@ module.exports = function (grunt) {
 			},
 			all: [
 				'Gruntfile.js',
-				'js/*.js',
-				'!js/*.min.js'
+				'assets/js/*.js',
+				'!assets/js/*.min.js'
 			]
+		},
+
+		uglify: {
+			options: {
+				preserveComments: 'some'
+			},
+			theme: {
+				files: [{
+					expand: true,
+					cwd: 'assets/js/',
+					src: [
+						'*.js',
+						'!*.min.js'
+					],
+					dest: 'assets/js/',
+					ext: '.min.js'
+				}]
+			}
 		},
 
 		watch: {
 			css: {
 				files: [
 					'sass/style.scss',
-					'sass/woocommerce.scss',
 					'sass/editor-style.scss',
 					'sass/elements/*.scss',
 					'sass/forms/*.scss',
@@ -141,22 +170,35 @@ module.exports = function (grunt) {
 					'sass/modules/*.scss',
 					'sass/navigation/*.scss',
 					'sass/navigation/*-*.scss',
+					'sass/site/*.scss',
 					'sass/site/**/*.scss',
 					'sass/typography/*.scss',
-					'sass/variables-site/*.scss',
-					'sass/woocommerce/*.scss'
+					'sass/variables-site/*.scss'
 				],
 				tasks: [
-					'sass'
+					'sass',
+					'uglify'
 				]
 			}
+		},
+
+		browserSync: {
+		    dev: {
+		        bsFiles: {
+		            src: ['style.css', 'assets/**/**', '**/*.php']
+		        },
+		        options: {
+		        	watchTask: true,
+		            proxy: 'http://localhost/elevate360/arctic'
+		        }
+		    }
 		},
 
 		// Replace text
 		replace: {
 			themeVersion: {
 				src: [
-					'sass/style.scss',
+					'sass/style.scss'
 				],
 				overwrite: true,
 				replacements: [ {
@@ -212,16 +254,24 @@ module.exports = function (grunt) {
 	});
 
 	grunt.loadNpmTasks( 'grunt-postcss' );
+	grunt.loadNpmTasks( 'grunt-browser-sync' );
     grunt.loadNpmTasks( 'grunt-checktextdomain' );
     grunt.loadNpmTasks( 'grunt-contrib-clean' );
     grunt.loadNpmTasks( 'grunt-contrib-compress' );
     grunt.loadNpmTasks( 'grunt-contrib-copy' );
+    grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
     grunt.loadNpmTasks( 'grunt-contrib-jshint' );
     grunt.loadNpmTasks( 'grunt-contrib-watch' );
     grunt.loadNpmTasks( 'grunt-sass' );
     grunt.loadNpmTasks( 'grunt-text-replace' );
+    grunt.loadNpmTasks( 'grunt-contrib-uglify' );
     grunt.loadNpmTasks( 'grunt-wp-css' );
     grunt.loadNpmTasks( 'grunt-wp-i18n' );
+
+	grunt.registerTask( 'default', [
+		'browserSync',
+		'watch'
+	]);
 
 	grunt.registerTask( 'css', [
 		'sass',
@@ -233,6 +283,7 @@ module.exports = function (grunt) {
 	grunt.registerTask( 'dist', [
 		'replace',
 		'css',
+		'uglify',
 		'makepot',
 		'clean',
 		'copy',

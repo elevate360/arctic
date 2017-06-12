@@ -120,3 +120,130 @@ function arctic_category_transient_flusher() {
 }
 add_action( 'edit_category', 'arctic_category_transient_flusher' );
 add_action( 'save_post',     'arctic_category_transient_flusher' );
+
+if ( ! function_exists( 'arctic_custom_logo' ) ) :
+/**
+ * Displays the optional custom logo.
+ *
+ * Does nothing if the custom logo is not available.
+ */
+function arctic_custom_logo() {
+	if ( function_exists( 'the_custom_logo' ) ) {
+		the_custom_logo();
+	}
+}
+endif;
+
+if( ! function_exists( 'arctic_do_breadcrumb' ) ) :
+/**
+ * [arctic_do_breadcrumb description]
+ * @return [type] [description]
+ */
+function arctic_do_breadcrumb(){
+
+	if (
+		( is_single() && ! get_theme_mod( 'breadcrumb_single' ) ) ||
+		( is_page() && ! get_theme_mod( 'breadcrumb_page' ) ) ||
+		( is_404() && ! get_theme_mod( 'breadcrumb_404' ) ) ||
+		( is_attachment() && ! get_theme_mod( 'breadcrumb_attachment' ) ) ||
+		( ( 'posts' === get_option( 'show_on_front' ) && is_home() ) && ! get_theme_mod( 'breadcrumb_home' ) ) ||
+		( ( 'page' === get_option( 'show_on_front' ) && is_front_page() ) && ! get_theme_mod( 'breadcrumb_front_page' ) ) ||
+		( ( 'page' === get_option( 'show_on_front' ) && is_home() ) && ! get_theme_mod( 'breadcrumb_posts_page' ) ) ||
+		( ( is_archive() || is_search() ) && ! get_theme_mod( 'breadcrumb_archive' ) )
+	) {
+		return;
+	}
+
+	if ( function_exists( 'bcn_display' ) ) {
+		echo '<div id="breadcrumb" typeof="BreadcrumbList" vocab="http://schema.org/">';
+		bcn_display();
+		echo '</div>';
+	}
+	elseif ( function_exists( 'breadcrumbs' ) ) {
+		breadcrumbs();
+	}
+	elseif ( function_exists( 'crumbs' ) ) {
+		crumbs();
+	}
+	elseif ( class_exists( 'WPSEO_Breadcrumbs' ) && get_theme_mod( 'breadcrumbs-enable', 'wpseo_internallinks' ) ) {
+		yoast_breadcrumb( $breadcrumb_markup_open, '</div>' );
+	}
+	elseif( function_exists( 'yoast_breadcrumb' ) && ! class_exists( 'WPSEO_Breadcrumbs' ) ) {
+		yoast_breadcrumb( $breadcrumb_markup_open, '</div>' );
+	}
+
+}
+endif;
+
+if ( ! function_exists( 'arctic_post_thumbnail' ) ) :
+/**
+ * Display an optional post thumbnail.
+ *
+ * Wraps the post thumbnail in an anchor element on index
+ * views, or a div element when on single views.
+ */
+function arctic_post_thumbnail( $size = 'post-thumbnail') {
+
+	if ( is_attachment() || ! has_post_thumbnail() ) {
+		return;
+	}
+
+	if ( is_singular() ) {
+		echo '<div class="post-thumbnail">';
+		the_post_thumbnail( $size );
+		echo '</div>';
+	} else {
+		echo '<div class="post-thumbnail">';
+			echo '<a href="'. get_permalink( get_the_id() ) .'">';
+				the_post_thumbnail( $size );
+			echo '</a>';
+		echo '</div>';
+	}
+
+}
+endif;
+
+if ( !function_exists( 'arctic_posts_navigation' ) ) :
+/**
+ * [arctic_posts_navigation description]
+ * @return [type] [description]
+ */
+function arctic_posts_navigation(){
+
+	if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'infinite-scroll' ) ) {
+		return;
+	}
+
+	if ( get_theme_mod( 'posts_navigation', 'posts_navigation' ) == 'posts_navigation' ) {
+		the_posts_navigation( array(
+            'prev_text'          => __( '&larr; Older posts', 'arctic' ),
+            'next_text'          => __( 'Newer posts &rarr;', 'arctic' ),
+		) );
+	} else {
+		the_posts_pagination( array(
+			'prev_text'          => __( '<span class="fa fa-angle-left"></span><span class="screen-reader-text">Previous Page</span>', 'arctic' ),
+			'next_text'          => __( '<span class="fa fa-angle-right"></span><span class="screen-reader-text">Next Page</span>', 'arctic' ),
+			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'arctic' ) . ' </span>',
+		) );
+	}
+
+}
+endif;
+
+if ( ! function_exists( 'arctic_do_footer_copyright' ) ) :
+/**
+ * Render footer copyright
+ *
+ * @return string
+ */
+function arctic_do_footer_copyright(){
+
+	$footer_copyright =	sprintf( __( 'Copyright &copy; %1$s %2$s. Proudly powered by %3$s.', 'arctic' ),
+		date_i18n( __('Y', 'arctic' ) ),
+		'<a href="'. esc_url( home_url() ) .'">'. esc_attr( get_bloginfo( 'name' ) ) .'</a>',
+		'<a href="'. esc_url( 'https://wordpress.org/' ) .'">WordPress</a>' );
+
+	echo apply_filters( 'arctic_footer_copyright', $footer_copyright );
+
+}
+endif;

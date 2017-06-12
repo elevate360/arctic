@@ -1,0 +1,28 @@
+.social-links ul a:before {
+	font-size: 21px;
+}
+
+.main-navigation .menu-wrap{
+	display: block;
+}
+
+.sidebar-toggled {
+	.main-navigation .menu-wrap{
+		z-index: inherit;
+	}
+}
+
+.page-numbers{
+	display: inline-block;
+	&.current {
+		background-color: $color__background-footer;
+		color: #fff;
+		.screen-reader-text {
+		    clip: rect(1px, 1px, 1px, 1px);
+		    height: 1px;
+		    overflow: hidden;
+		    position: absolute !important;
+		    width: 1px;
+		}
+	}
+}

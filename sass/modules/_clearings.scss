@@ -6,10 +6,18 @@
 .comment-content:after,
 .site-header:before,
 .site-header:after,
+.site-main:before,
+.site-main:after,
 .site-content:before,
 .site-content:after,
 .site-footer:before,
-.site-footer:after {
+.site-footer:after,
+.wrap:before,
+.wrap:after,
+.infinite-wrap:before,
+.infinite-wrap:after,
+.author-info:before,
+.author-info:after {
 	@include clearfix;
 }
 
@@ -17,7 +25,11 @@
 .entry-content:after,
 .comment-content:after,
 .site-header:after,
+.site-main:after,
 .site-content:after,
-.site-footer:after {
+.site-footer:after,
+.wrap:after,
+.infinite-wrap:after,
+.author-info:after {
 	@include clearfix-after;
 }

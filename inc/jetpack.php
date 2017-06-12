@@ -11,18 +11,15 @@
  * Jetpack setup function.
  *
  * See: https://jetpack.com/support/infinite-scroll/
- * See: https://jetpack.com/support/responsive-videos/
  */
 function arctic_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
-		'container' => 'main',
-		'render'    => 'arctic_infinite_scroll_render',
-		'footer'    => 'page',
+		'type'      		=> 'click',
+		'container' 		=> 'main',
+		'render'    		=> 'arctic_infinite_scroll_render',
+		'footer_widgets'	=> array( 'sidebar-2', 'sidebar-3' ),
 	) );
-
-	// Add theme support for Responsive Videos.
-	add_theme_support( 'jetpack-responsive-videos' );
 }
 add_action( 'after_setup_theme', 'arctic_jetpack_setup' );
 
@@ -35,7 +32,15 @@ function arctic_infinite_scroll_render() {
 		if ( is_search() ) :
 			get_template_part( 'template-parts/content', 'search' );
 		else :
-			get_template_part( 'template-parts/content', get_post_format() );
+			get_template_part( 'template-parts/content', 'home' );
 		endif;
 	}
 }
+
+/** Remove Jetpack Infinity Scroll CSS */
+function arctic_deregister_jetpack_styles(){
+
+	 wp_deregister_style( 'the-neverending-homepage' ); // Infinite Scroll
+
+}
+add_action( 'wp_print_styles', 'arctic_deregister_jetpack_styles' );

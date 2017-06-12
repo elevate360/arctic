@@ -1,0 +1,262 @@
+.social-links {
+	clear: both;
+	margin: 0 auto;
+	position: relative;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+
+		li {
+			display: inline-block;
+			list-style: none;
+			margin: 0 -2px 0 0;
+			padding: 0;
+		}
+
+		a {
+			color: $color__text-secondary;
+			display: inline-block;
+			text-decoration: none;
+			overflow: hidden;
+			vertical-align: middle;
+			padding: .5rem 1rem;
+			span {
+				display: none;
+			}
+			&:hover,
+			&:focus {
+				color: $color__link;
+			}
+			&:before {
+				content: '\f1e0';
+			}
+		}
+
+		a[href*='500px.com']:before {
+		      content: "\f26e";
+		}
+		a[href*='amazon.com']:before {
+		      content: "\f270";
+		}
+		a[href*='angellist.com']:before {
+		      content: "\f209";
+		}
+		a[href*='behance.com']:before {
+		      content: "\f1b4";
+		}
+		a[href*='bitbucket.com']:before {
+		      content: "\f171";
+		}
+		a[href*='btc.com']:before {
+		      content: "\f15a";
+		}
+		a[href*='buysellads.com']:before {
+		      content: "\f20d";
+		}
+		a[href*='codepen.io']:before {
+		      content: "\f1cb";
+		}
+		a[href*='codiepie.com']:before {
+		      content: "\f284";
+		}
+		a[href*='connectdevelop.com']:before {
+		      content: "\f20e";
+		}
+		a[href*='contao.org']:before {
+		      content: "\f26d";
+		}
+		a[href*='dashcube.com']:before {
+		      content: "\f210";
+		}
+		a[href*='del.icio.us']:before {
+		      content: "\f1a5";
+		}
+		a[href*='deviantart.com']:before {
+		      content: "\f1bd";
+		}
+		a[href*='digg.com']:before {
+		      content: "\f1a6";
+		}
+		a[href*='dribbble.com']:before {
+		      content: "\f17d";
+		}
+		a[href*='dropbox.com']:before {
+		      content: "\f16b";
+		}
+		a[href*='drupal.com']:before {
+		      content: "\f1a9";
+		}
+		a[href*='facebook.com']:before {
+		      content: "\f09a";
+		}
+		a[href*='flickr.com']:before {
+		      content: "\f16e";
+		}
+		a[href*='forumbee.com']:before {
+		      content: "\f211";
+		}
+		a[href*='foursquare.com']:before {
+		      content: "\f180";
+		}
+		a[href*='getpocket.com']:before {
+		      content: "\f265";
+		}
+		a[href*='github.com']:before {
+		      content: "\f09b";
+		}
+		a[href*='gitlab.com']:before {
+		      content: "\f296";
+		}
+		a[href*='gratipay.com']:before {
+		      content: "\f184";
+		}
+		a[href*='glide.me']:before {
+		      content: "\f2a6";
+		}
+		a[href*='plus.google.com']:before {
+		      content: "\f0d5";
+		}
+		a[href*='instagram.com']:before {
+		      content: "\f16d";
+		}
+		a[href*='joomla.org']:before {
+		      content: "\f1aa";
+		}
+		a[href*='jsfiddle.net']:before {
+		      content: "\f1cc";
+		}
+		a[href*='lastfm.com']:before {
+		      content: "\f202";
+		}
+		a[href*='leanpub.com']:before {
+		      content: "\f212";
+		}
+		a[href*='linkedin.com']:before {
+		      content: "\f0e1";
+		}
+		a[href*='medium.com']:before {
+		      content: "\f23a";
+		}
+		a[href*='mixcloud.com']:before {
+		      content: "\f289";
+		}
+		a[href*='modx.com']:before {
+		      content: "\f285";
+		}
+		a[href*='ok.ru']:before {
+		      content: "\f263";
+		}
+		a[href*='opencart.com']:before {
+		      content: "\f23d";
+		}
+		a[href*='openid.net']:before {
+		      content: "\f19b";
+		}
+		a[href*='paypal.com']:before,
+		a[href*='paypal.me']:before {
+		      content: "\f1ed";
+		}
+		a[href*='piedpiper.com']:before {
+		      content: "\f2ae";
+		}
+		a[href*='pinterest.com']:before {
+		      content: "\f0d2";
+		}
+		a[href*='reddit.com']:before {
+		      content: "\f1a1";
+		}
+		a[href*='renren.com']:before {
+		      content: "\f18b";
+		}
+		a[href*='scribd.com']:before {
+		      content: "\f28a";
+		}
+		a[href*='skype.com']:before {
+		      content: "\f17e";
+		}
+		a[href*='slack.com']:before {
+		      content: "\f198";
+		}
+		a[href*='slideshare.com']:before {
+		      content: "\f1e7";
+		}
+		a[href*='soundcloud.com']:before {
+		      content: "\f1be";
+		}
+		a[href*='spotify.com']:before {
+		      content: "\f1bc";
+		}
+		a[href*='stackexchange.com']:before {
+		      content: "\f18d";
+		}
+		a[href*='stackoverflow.com']:before {
+		      content: "\f16c";
+		}
+		a[href*='steam.com']:before {
+		      content: "\f1b6";
+		}
+		a[href*='stumbleupon.com']:before {
+		      content: "\f1a4";
+		}
+		a[href*='trello.com']:before {
+		      content: "\f181";
+		}
+		a[href*='tripadvisor.com']:before {
+		      content: "\f262";
+		}
+		a[href*='tumblr.com']:before {
+		      content: "\f173";
+		}
+		a[href*='twitch.com']:before {
+		      content: "\f1e8";
+		}
+		a[href*='twitter.com']:before {
+		      content: "\f099";
+		}
+		a[href*='viacoin.org']:before {
+		      content: "\f237";
+		}
+		a[href*='vimeo.com']:before {
+		      content: "\f27d";
+		}
+		a[href*='vine.co']:before {
+		      content: "\f1ca";
+		}
+		a[href*='vk.com']:before {
+		      content: "\f189";
+		}
+		a[href*='weibo.com']:before {
+		      content: "\f18a";
+		}
+		a[href*='whatsapp.com']:before {
+		      content: "\f232";
+		}
+		a[href*='wikipedia.org']:before {
+		      content: "\f266";
+		}
+		a[href*='wordpress.com']:before,
+		a[href*='wordpress.org']:before {
+		      content: "\f19a";
+		}
+		a[href*='xing.com']:before {
+		      content: "\f168";
+		}
+		a[href*='yahoo.com']:before {
+		      content: "\f19e";
+		}
+		a[href*='yelp.com']:before {
+		      content: "\f1e9";
+		}
+		a[href*='youtube.com']:before {
+		      content: "\f16a";
+		}
+		a[href*='/feed']:before {
+		      content: "\f09e";
+		}
+
+	}
+
+}

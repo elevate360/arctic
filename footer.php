@@ -9,17 +9,29 @@
  * @package Arctic
  */
 
+$setting = arctic_setting_default();
 ?>
 
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'arctic' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'arctic' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'arctic' ), 'arctic', '<a href="https://automattic.com/" rel="designer">Elevate360</a>' ); ?>
-		</div><!-- .site-info -->
+
+		<?php if ( get_theme_mod( 'footer-image', $setting['footer_image'] ) !== '' ) :?>
+			<div class="footer-image"></div>
+		<?php endif;?>
+
+		<?php get_sidebar( 'footer' );?>
+
+		<?php arctic_do_instagram_footer();?>
+
+		<?php get_template_part( 'template-parts/footer', 'social' );?>
+
+		<p class="site-info">
+			<?php arctic_do_footer_copyright();?>
+		</p><!-- .site-info -->
+
 	</footer><!-- #colophon -->
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

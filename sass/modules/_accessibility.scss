@@ -8,8 +8,6 @@
 
 	&:focus {
 		background-color: $color__background-screen;
-		border-radius: 3px;
-		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 		clip: auto !important;
 		color: $color__text-screen;
 		display: block;
@@ -23,10 +21,17 @@
 		top: 5px;
 		width: auto;
 		z-index: 100000; /* Above WP toolbar. */
+		box-shadow: 0 10px 0 -5px rgba(0,0,0,0.25);
 	}
 }
 
 /* Do not show the outline on the skip link target. */
-#content[tabindex="-1"]:focus {
+#page[tabindex="-1"]:focus,
+#site-navigation[tabindex="-1"]:focus,
+#content[tabindex="-1"]:focus,
+#secondary[tabindex="-1"]:focus,
+#tertiary[tabindex="-1"]:focus,
+#respond[tabindex="-1"]:focus,
+.hentry[tabindex="-1"]:focus {
 	outline: 0;
 }
