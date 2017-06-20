@@ -1,0 +1,271 @@
+.sticky {
+	display: block;
+}
+
+.entry {
+	margin: 0 0 1.5em;
+	position: relative;
+}
+
+.byline,
+.updated:not(.published){
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.single .site-content,
+.page .site-content,
+.search-results .site-content,
+.error404 .site-content {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+
+.search-results .page-header {
+	border-bottom: 3px solid $color__background-hr;
+	color: $color__text-tertiary;
+	text-align: center;
+	text-transform: uppercase;
+	padding-bottom: 3rem;
+	margin-bottom: 3rem;
+}
+
+.error-404 {
+	text-align: center;
+}
+
+.error404 .page-title {
+	color: $color__text-tertiary;
+	text-transform: uppercase;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5rem 0 0;
+}
+
+.no-results {
+	text-align: center;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5rem;
+}
+
+.entry-title {
+	@include font-size(2);
+	line-height: 1em;
+	text-transform: uppercase;
+}
+
+.entry-title a {
+	color: $color__text-main;
+	&:hover,
+	&:focus {
+		color: $color__link;
+	}
+}
+
+.entry-meta,
+.cat-links,
+.tags-links,
+.comments-link {
+	color: $color__text-tertiary;
+	@include font-size(0.875);
+	font-weight: bold;
+	text-transform: uppercase;
+	a {
+		color: $color__text-main;
+		&:hover,
+		&:focus {
+			color: $color__link-hover;
+		}
+	}
+}
+
+.entry-meta {
+	margin-bottom: 1.5rem;
+}
+
+.tags-links,
+.comments-link {
+	margin-left: 1.5rem;
+}
+
+.home .site-main,
+.archive .site-main {
+	background-color: $color__background-footer;
+	.entry {
+		background-color: $color__background-footer;
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
+		height: 50vw;
+	}
+	.post-thumbnail {
+		img {
+			display: block;
+			width: 100%;
+			vertical-align: middle;
+			opacity: 0.5;
+			transition: all 0.5s ease-in-out;
+		}
+		&.focus img {
+			opacity: 0.9;
+			transform: scale(1.25);
+		}
+	}
+	.entry-title {
+		@include font-size(2);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		text-align: center;
+		margin: 0;
+		transform: translate(-50%, -50%);
+		a {
+			color: #fff;
+			transition: all 0.25s ease-in-out;
+			&:hover,
+			&:focus {
+				text-shadow: 0 2px 32px rgba(0,0,0,1);
+			}
+		}
+	}
+}
+
+.post-thumbnail {
+	text-align: center;
+	img {
+		display: inline-block;
+		vertical-align: middle;
+	}
+}
+
+.author-info {
+	border-top: 3px solid $color__background-hr;
+	padding-top: 1.5rem;
+}
+
+.author-avatar {
+    float: left;
+    margin: 0 0 1.5rem;
+}
+
+.author-avatar,
+.author-avatar-archive {
+	display: inline-block;
+	margin: 0 0 1.5rem;
+    img {
+    	display: block;
+    	vertical-align: middle;
+    	border-radius: 100px;
+    }
+}
+
+.author-title {
+	line-height: 1;
+	a{
+		color: $color__text-main;
+		@include font-size(1.125);
+		text-transform: uppercase;
+		&:hover,
+		&:focus {
+			color: $color__link-hover;
+		}
+	}
+}
+
+.author-detail {
+    float: right;
+    width: calc(100% - 120px);
+}
+
+.edit-link {
+	display: block;
+	margin-bottom: 1.5rem;
+	overflow: hidden;
+}
+
+a.post-edit-link {
+	border-radius: 3px;
+	background: $color__button;
+	color: rgba(255, 255, 255, .8);
+	display: block;
+	float: right;
+	@include font-size(0.875);
+	font-weight: bold;
+	line-height: 1;
+	padding: .5rem 1.5em;
+	text-transform: uppercase;
+	margin-bottom: 1.5rem;
+	box-shadow: inset 0px -1px 0 2px rgba(0, 0, 0, 0.2);
+	&:hover,
+	&:focus {
+		background-color: $color__button-hover;
+		color: rgba(255, 255, 255, .8);
+	}
+}
+
+.archive-title {
+	line-height: 1;
+	@include font-size(1.5);
+	text-transform: uppercase;
+}
+
+.featured-content {
+	position: relative;
+	.entry {
+		background-color: $color__background-footer;
+		margin: 0;
+		padding: 0 2.5rem;
+		height: 100vh;
+		text-align: center;
+		position: relative;
+		z-index: 0;
+	}
+
+	.admin-bar & .entry {
+		height: calc(100vh - 32px);
+	}
+
+	.featured-image {
+		background-size: cover;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0.5;
+		animation: fadein-images 1s ease-out backwards, image-pulse 15s ease-in-out infinite alternate;
+	}
+
+	.slider-content {
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    text-align: center;
+	    margin: 0;
+	    transform: translate(-50%, -50%);
+	}
+
+	.entry-title a {
+		color: #fff;
+		&:hover,
+		&:focus {
+			color: $color__link-hover;
+			text-shadow: 0 5px 32px #000;
+		}
+	}
+
+}

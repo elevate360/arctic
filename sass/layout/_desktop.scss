@@ -1,0 +1,15 @@
+@media (min-width: 992px) {
+
+	.home .site-main,
+	.archive .site-main {
+		.entry {
+			float: left;
+			height: 32vw;
+		}
+	}
+
+	.entry-title {
+		@include font-size(3);
+	}
+
+}

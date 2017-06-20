@@ -1,0 +1,9 @@
+@import "buttons";
+
+@import "fields";
+
+button[disabled],
+html input[disabled] {
+	cursor: not-allowed;
+	opacity: 0.5;
+}

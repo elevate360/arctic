@@ -1,0 +1,38 @@
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+caption{
+	font-weight: bold;
+}
+
+th {
+	font-weight: normal;
+}
+
+caption {
+	margin-bottom: 1em;
+}
+
+th,
+td {
+	padding: .5em;
+	border-bottom: 1px solid $color__background-hr;
+	text-align: left;
+}
+
+thead th {
+	border-bottom: 2px solid $color__background-hr;
+}
+
+.table-responsive {
+	display: block;
+	width: 100%;
+	min-height: 0%;
+	overflow-x: auto;
+	margin-bottom: 1.5em;
+	& > table {
+		margin: 0;
+	}
+}
