@@ -1,4 +1,14 @@
-# Arctic
+Arctic
+===
+
+The Arctic Theme is built for photographers and designers with a passion for large visual images and detailed posts with elegant typography.
+
+It leverages a fullscreen layout that makes full use of the available real estate so that every pixel has a place.
+
+No expense has been spared on code quality and we believe that this is our best theme yet.
+Arctic comes with the ability to have granular control over fonts and post types and can be extended into incredible portfolios.
+
+Create a fantastic, bold and sleek looking website design using Arctic.
 
 Copyright and License
 ---
