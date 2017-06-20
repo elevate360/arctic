@@ -13,6 +13,8 @@ get_header(); ?>
 		<div class="wrap">
 			<main id="main" class="site-main" role="main">
 
+			<?php arctic_do_breadcrumb();?>
+
 			<?php
 			while ( have_posts() ) : the_post();
 

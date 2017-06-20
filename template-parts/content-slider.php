@@ -5,7 +5,7 @@
  * @package Arctic
  */
 
-if ( get_theme_mod( 'enable_slider', true ) == false ) {
+if ( get_theme_mod( 'enable_slider' ) == false ) {
 	if ( is_customize_preview() ) {
 		echo '<div id="featured-content" class="featured-content not-visible"></div>';
 	}
@@ -29,7 +29,7 @@ if ( $arctic_featured->have_posts() ) : ?>
 
 		<?php
 
-		$featured_image 	= wp_get_attachment_image_src( get_post_thumbnail_id( get_the_id() ), 'large' ) ;
+		$featured_image 	= wp_get_attachment_image_src( get_post_thumbnail_id( get_the_id() ), 'arctic-large' ) ;
 		$background_image 	= ( !empty( $featured_image[0] ) ) ? 'style="background-image:url(' . esc_url( $featured_image[0] ) . ');"' : '' ;
 		?>
 

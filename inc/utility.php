@@ -61,18 +61,12 @@ function arctic_featured_post_id(){
  * @return [type] [description]
  */
 function arctic_do_slider_content(){
-	if ( is_active_sidebar( 'sidebar-5' ) ) {
-		echo '<div class="homepage-slider-widget">';
-		dynamic_sidebar( 'sidebar-5' );
-		echo '</div>';
-	} else {
-		get_template_part( 'template-parts/content', 'slider' );
-	}
+	get_template_part( 'template-parts/content', 'slider' );
 }
 
 /** Get content instagram */
 function arctic_do_instagram_footer(){
-	get_template_part( 'template-parts/instagram', 'footer' );
+	get_template_part( 'template-parts/footer', 'instagram' );
 }
 
 /**

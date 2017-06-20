@@ -22,8 +22,6 @@ $setting = arctic_setting_default();
 
 		<?php get_sidebar( 'footer' );?>
 
-		<?php arctic_do_instagram_footer();?>
-
 		<?php get_template_part( 'template-parts/footer', 'social' );?>
 
 		<p class="site-info">
@@ -31,6 +29,10 @@ $setting = arctic_setting_default();
 		</p><!-- .site-info -->
 
 	</footer><!-- #colophon -->
+
+	<?php arctic_do_instagram_footer();?>
+
+	<?php get_sidebar( 'after-footer' );?>
 
 </div><!-- #page -->
 

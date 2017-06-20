@@ -141,23 +141,13 @@ if( ! function_exists( 'arctic_do_breadcrumb' ) ) :
  */
 function arctic_do_breadcrumb(){
 
-	if (
-		( is_single() && ! get_theme_mod( 'breadcrumb_single' ) ) ||
-		( is_page() && ! get_theme_mod( 'breadcrumb_page' ) ) ||
-		( is_404() && ! get_theme_mod( 'breadcrumb_404' ) ) ||
-		( is_attachment() && ! get_theme_mod( 'breadcrumb_attachment' ) ) ||
-		( ( 'posts' === get_option( 'show_on_front' ) && is_home() ) && ! get_theme_mod( 'breadcrumb_home' ) ) ||
-		( ( 'page' === get_option( 'show_on_front' ) && is_front_page() ) && ! get_theme_mod( 'breadcrumb_front_page' ) ) ||
-		( ( 'page' === get_option( 'show_on_front' ) && is_home() ) && ! get_theme_mod( 'breadcrumb_posts_page' ) ) ||
-		( ( is_archive() || is_search() ) && ! get_theme_mod( 'breadcrumb_archive' ) )
-	) {
-		return;
-	}
+	$breadcrumb_markup_open = '<div id="breadcrumb" typeof="BreadcrumbList" vocab="http://schema.org/">';
+	$breadcrumb_markup_close = '</div>';
 
 	if ( function_exists( 'bcn_display' ) ) {
-		echo '<div id="breadcrumb" typeof="BreadcrumbList" vocab="http://schema.org/">';
+		echo $breadcrumb_markup_open;
 		bcn_display();
-		echo '</div>';
+		echo $breadcrumb_markup_close;
 	}
 	elseif ( function_exists( 'breadcrumbs' ) ) {
 		breadcrumbs();
@@ -165,11 +155,11 @@ function arctic_do_breadcrumb(){
 	elseif ( function_exists( 'crumbs' ) ) {
 		crumbs();
 	}
-	elseif ( class_exists( 'WPSEO_Breadcrumbs' ) && get_theme_mod( 'breadcrumbs-enable', 'wpseo_internallinks' ) ) {
-		yoast_breadcrumb( $breadcrumb_markup_open, '</div>' );
+	elseif ( class_exists( 'WPSEO_Breadcrumbs' ) ) {
+		yoast_breadcrumb( $breadcrumb_markup_open, $breadcrumb_markup_close );
 	}
 	elseif( function_exists( 'yoast_breadcrumb' ) && ! class_exists( 'WPSEO_Breadcrumbs' ) ) {
-		yoast_breadcrumb( $breadcrumb_markup_open, '</div>' );
+		yoast_breadcrumb( $breadcrumb_markup_open, $breadcrumb_markup_close );
 	}
 
 }
@@ -230,6 +220,23 @@ function arctic_posts_navigation(){
 }
 endif;
 
+if ( ! function_exists( 'arctic_footer_copyright' ) ) :
+/**
+ * [arctic_footer_copyright description]
+ * @return [type] [description]
+ */
+function arctic_footer_copyright(){
+
+	$footer_copyright =	sprintf( __( 'Copyright &copy; %1$s %2$s. Proudly powered by %3$s.', 'arctic' ),
+		date_i18n( __('Y', 'arctic' ) ),
+		'<a href="'. esc_url( home_url() ) .'">'. esc_attr( get_bloginfo( 'name' ) ) .'</a>',
+		'<a href="'. esc_url( 'https://wordpress.org/' ) .'">WordPress</a>' );
+
+	echo apply_filters( 'arctic_footer_copyright', $footer_copyright );
+
+}
+endif;
+
 if ( ! function_exists( 'arctic_do_footer_copyright' ) ) :
 /**
  * Render footer copyright
@@ -238,12 +245,14 @@ if ( ! function_exists( 'arctic_do_footer_copyright' ) ) :
  */
 function arctic_do_footer_copyright(){
 
-	$footer_copyright =	sprintf( __( 'Copyright &copy; %1$s %2$s. Proudly powered by %3$s.', 'arctic' ),
-		date_i18n( __('Y', 'arctic' ) ),
-		'<a href="'. esc_url( home_url() ) .'">'. esc_attr( get_bloginfo( 'name' ) ) .'</a>',
-		'<a href="'. esc_url( 'https://wordpress.org/' ) .'">WordPress</a>' );
+	$footer_copyright = get_theme_mod( 'footer_copyright' );
 
-	echo apply_filters( 'arctic_footer_copyright', $footer_copyright );
+	if ( !empty( $footer_copyright ) ) {
+		$footer_copyright = str_replace( '[YEAR]', date_i18n( __('Y', 'arctic' ) ), $footer_copyright );
+		echo esc_attr( $footer_copyright );
+	} else {
+		arctic_footer_copyright();
+	}
 
 }
 endif;

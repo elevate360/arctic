@@ -54,6 +54,8 @@ function arctic_setup() {
 
 	set_post_thumbnail_size( 1280, 842, array( 'center', 'top' ) );
 
+	add_image_size( 'arctic-large', 1600, 1600, array( 'center', 'top' ) );
+
 	// Set the default content width.
 	$GLOBALS['content_width'] = 780;
 
@@ -142,6 +144,15 @@ function arctic_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'After Footer', 'arctic' ),
+		'id'            => 'sidebar-4',
+		'description'   => esc_html__( 'Add widgets here.', 'arctic' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'arctic_widgets_init' );
 
@@ -166,21 +177,6 @@ function arctic_scripts() {
 	wp_enqueue_script( 'jquery-slick', get_template_directory_uri() . '/assets/js/slick/slick.min.js', array( 'jquery' ), '1.6.0', true );
 	wp_enqueue_script( 'arctic-script', get_template_directory_uri() . '/assets/js/arctic.min.js', array( 'jquery' ), '20151215', true );
 
-	$output = array(
-		'slick'	=> array (
-			'slides_to_show' 		=> (int)get_theme_mod( 'slides_to_show', 1 ),
-			'autoplay'				=> (bool)get_theme_mod( 'autoplay', true ),
-			'autoplay_speed'		=> (int)get_theme_mod( 'autoplay_speed', 5000 ),
-			'arrow'					=> (bool)get_theme_mod( 'arrow', true ),
-			'dots'					=> (bool)get_theme_mod( 'dots', true ),
-			'pause_on_hover'		=> (bool)get_theme_mod( 'pause_on_hover', false ),
-			'pause_on_dots_hover'	=> (bool)get_theme_mod( 'pause_on_dots_hover', true ),
-			'prev_arrow'			=> __( 'Previous', 'arctic' ),
-			'next_arrow'			=> __( 'Next', 'arctic' ),
-		)
-	);
-	wp_localize_script( 'arctic-script', 'Arcticl10n', apply_filters( 'arctic_slider_args', $output ) );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -198,11 +194,6 @@ require get_template_directory() . '/inc/vendor/vendor.php';
  * Custom helper functions.
  */
 require get_template_directory() . '/inc/utility.php';
-
-/**
- * Custom icon functions.
- */
-require get_template_directory() . '/inc/icon-functions.php';
 
 /**
  * Widgets additions.

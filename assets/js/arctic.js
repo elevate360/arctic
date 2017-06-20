@@ -31,7 +31,7 @@
 })();
 
 ( function() {
-	var container, button, menu, body, links, subMenus;
+	var container, button, body;
 
 	container = document.getElementById( 'site-navigation' );
 	if ( ! container ) {
@@ -66,8 +66,8 @@
 		$('a[href*="#content"]').click(function(event) {
 	        // On-page links
 	        if (
-	            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
-	            location.hostname == this.hostname
+	            location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') &&
+	            location.hostname === this.hostname
 	        ) {
 	            // Figure out element to scroll to
 	            var target = $(this.hash);
@@ -83,12 +83,12 @@
 	                    // Must change focus!
 	                    var $target = $(target);
 	                    $target.focus();
-	                    if ($target.is(":focus")) { // Checking if the target was focused
+	                    if ($target.is(':focus')) { // Checking if the target was focused
 	                        return false;
 	                    } else {
 	                        $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
 	                        $target.focus(); // Set focus again
-	                    };
+	                    }
 	                });
 	            }
 	        }
@@ -105,28 +105,26 @@
 	function run_fitVids(){
 		var vidElement = $( '#page' );
 		vidElement.fitVids({
-			customSelector: "iframe[src^='https://videopress.com']"
+			customSelector: 'iframe[src^="https://videopress.com"]'
 		});
 	}
 
 	function slick__featured_contents(){
 
-		var prev__btn = '<button type="button" data-role="none" class="arctic-slick-prev" aria-label="Previous" tabindex="0" role="button">' + Arcticl10n.slick.prev_arrow + '</button>',
-			next__btn = '<button type="button" data-role="none" class="arctic-slick-next" aria-label="Next" tabindex="0" role="button">' + Arcticl10n.slick.next_arrow + '</button>';
+		var prev__btn = '<button type="button" data-role="none" class="arctic-slick-prev" aria-label="Previous" tabindex="0" role="button"></button>',
+			next__btn = '<button type="button" data-role="none" class="arctic-slick-next" aria-label="Next" tabindex="0" role="button"></button>';
 
 		$('.featured-content').not('.slick-initialized').slick({
 			infinite: true,
-			dots: true,
 			adaptiveHeight: true,
 			slidesToScroll: 1,
 			fade: true,
-			slidesToShow: Arcticl10n.slick.slides_to_show,
-			autoplay: Arcticl10n.slick.autoplay,
-			autoplaySpeed: Arcticl10n.slick.autoplay_speed,
-			arrows: Arcticl10n.slick.arrow,
-            dots: Arcticl10n.slick.dots,
-            pauseOnHover: Arcticl10n.slick.pause_on_hover,
-            pauseOnDotsHover: Arcticl10n.slick.pause_on_dots_hover,
+			slidesToShow: 1,
+			autoplay: true,
+			autoplaySpeed: 5000,
+			arrows: true,
+            dots: true,
+            pauseOnHover: false,
             dotsClass: 'arctic-slick-dots',
             prevArrow: prev__btn,
             nextArrow: next__btn,
@@ -145,7 +143,7 @@
 
 	function slick__instagram_footer() {
 
-		$( '.instagram-footer ul' ).not('.slick-initialized').slick({
+		$( '#quaternary .instagram-pics' ).not('.slick-initialized').slick({
 			infinite: true,
 			dots: false,
 			adaptiveHeight: false,
@@ -154,7 +152,6 @@
 			autoplay: true,
 			autoplaySpeed: 5000,
 			arrows: false,
-			dots: false,
 			responsive: [
 				{
 					breakpoint: 960,

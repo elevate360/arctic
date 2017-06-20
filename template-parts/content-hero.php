@@ -14,7 +14,7 @@ $has_post_thumbnail = ( is_singular() && has_post_thumbnail( get_the_id() ) || i
 <div id="section-hero" class="section-hero<?php echo esc_attr( $has_post_thumbnail );?>">
 
 <?php if( is_home() ) : ?>
-	<?php get_template_part( 'template-parts/content', 'slider' );?>
+	<?php arctic_do_slider_content();?>
 <?php endif;?>
 
 <?php if( is_singular() || is_archive() ) :?>
@@ -34,4 +34,5 @@ $has_post_thumbnail = ( is_singular() && has_post_thumbnail( get_the_id() ) || i
 	<?php endif;?>
 
 <?php endif;?>
+
 </div><!-- .section-hero -->

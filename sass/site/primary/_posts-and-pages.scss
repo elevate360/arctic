@@ -18,20 +18,46 @@
 }
 
 .single .site-content,
-.page .site-content {
+.page .site-content,
+.search-results .site-content,
+.error404 .site-content {
 	padding-top: 3rem;
 	padding-bottom: 3rem;
+}
+
+.search-results .page-header {
+	border-bottom: 3px solid $color__background-hr;
+	color: $color__text-tertiary;
+	text-align: center;
+	text-transform: uppercase;
+	padding-bottom: 3rem;
+	margin-bottom: 3rem;
+}
+
+.error-404 {
+	text-align: center;
+}
+
+.error404 .page-title {
+	color: $color__text-tertiary;
+	text-transform: uppercase;
 }
 
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 1.5rem 0 0;
+}
+
+.no-results {
+	text-align: center;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
 }
 
 .page-links {
 	clear: both;
-	margin: 0 0 1.5em;
+	margin: 0 0 1.5rem;
 }
 
 .entry-title {
@@ -50,7 +76,8 @@
 
 .entry-meta,
 .cat-links,
-.tags-links {
+.tags-links,
+.comments-link {
 	color: $color__text-tertiary;
 	@include font-size(0.875);
 	font-weight: bold;
@@ -64,7 +91,12 @@
 	}
 }
 
-.tags-links {
+.entry-meta {
+	margin-bottom: 1.5rem;
+}
+
+.tags-links,
+.comments-link {
 	margin-left: 1.5rem;
 }
 
@@ -164,9 +196,6 @@
 }
 
 a.post-edit-link {
-	border: 1px solid;
-	border-bottom-width: 3px;
-	border-color: $color__border-button;
 	border-radius: 3px;
 	background: $color__button;
 	color: rgba(255, 255, 255, .8);
@@ -178,10 +207,11 @@ a.post-edit-link {
 	padding: .5rem 1.5em;
 	text-transform: uppercase;
 	margin-bottom: 1.5rem;
+	box-shadow: inset 0px -1px 0 2px rgba(0, 0, 0, 0.2);
 	&:hover,
-	&:active,
 	&:focus {
 		background-color: $color__button-hover;
+		color: rgba(255, 255, 255, .8);
 	}
 }
 
@@ -193,7 +223,6 @@ a.post-edit-link {
 
 .featured-content {
 	position: relative;
-	//display: none;
 	.entry {
 		background-color: $color__background-footer;
 		margin: 0;
@@ -202,6 +231,10 @@ a.post-edit-link {
 		text-align: center;
 		position: relative;
 		z-index: 0;
+	}
+
+	.admin-bar & .entry {
+		height: calc(100vh - 32px);
 	}
 
 	.featured-image {
@@ -228,6 +261,11 @@ a.post-edit-link {
 
 	.entry-title a {
 		color: #fff;
+		&:hover,
+		&:focus {
+			color: $color__link-hover;
+			text-shadow: 0 5px 32px #000;
+		}
 	}
 
 }

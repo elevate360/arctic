@@ -16,7 +16,9 @@
 	}
 
 	.single,
-	.page {
+	.page,
+	.search-results,
+	.error404 {
 		.site-main {
 			max-width: 780px;
 			margin: 0 auto;

@@ -51,8 +51,13 @@
 		text-transform: uppercase;
 		&:hover,
 		&:focus {
-			color: $color__link;
+			color: $color__link-hover;
 		}
+	}
+	.edit-link {
+		position: absolute;
+		top: 0;
+		right: 0;
 	}
 }
 
@@ -67,9 +72,6 @@
 }
 
 .comment-body > .reply a {
-	border: 1px solid;
-	border-bottom-width: 3px;
-	border-color: $color__border-button;
 	border-radius: 3px;
 	background: $color__button;
 	color: rgba(255, 255, 255, .8);
@@ -80,6 +82,7 @@
 	padding: .5rem 1.5em;
 	text-transform: uppercase;
 	margin-bottom: 1.5rem;
+	box-shadow: inset 0px -1px 0 2px rgba(0, 0, 0, 0.1);
 	&:hover,
 	&:active,
 	&:focus {
@@ -123,7 +126,6 @@
 }
 
 .comment-form {
-	padding: 4px;
 	label {
 		color: $color__text-secondary;
 		display: block;

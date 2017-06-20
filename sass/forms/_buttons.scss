@@ -2,9 +2,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-bottom-width: 3px;
-	border-color: $color__border-button;
+	border: none;
 	border-radius: 5px;
 	background: $color__button;
 	color: rgba(255, 255, 255, .8);
@@ -13,6 +11,7 @@ input[type="submit"] {
 	line-height: 1;
 	padding: 1rem 1.5em;
 	transition: all 0.1s ease-in-out;
+	box-shadow: inset 0px -1px 0 2px rgba(0, 0, 0, 0.1);
 
 	&:hover,
 	&:active,

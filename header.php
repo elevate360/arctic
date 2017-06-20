@@ -72,6 +72,4 @@
 
 	<?php get_template_part( 'template-parts/content', 'hero' ); ?>
 
-	<?php arctic_do_breadcrumb();?>
-
 	<div id="content" class="site-content">
