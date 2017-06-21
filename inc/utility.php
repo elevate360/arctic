@@ -2,16 +2,16 @@
 /**
  * Helper functions that act independently of the theme templates.
  *
- * @package Arctic
+ * @package Arctic Black
  */
 
-if ( ! function_exists( 'arctic_get_terms' ) ) :
+if ( ! function_exists( 'arctic_black_get_terms' ) ) :
 /**
  * Helper function display list of product categories in an array.
  *
  * @return array
  */
-function arctic_get_terms( $term_name ){
+function arctic_black_get_terms( $term_name ){
 
 	if ( ! taxonomy_exists( $term_name ) )
 		return array();
@@ -36,7 +36,7 @@ endif;
  * Retun an array of featured post ID
  * @return string
  */
-function arctic_featured_post_id(){
+function arctic_black_featured_post_id(){
 
 	$featured_id = array();
 
@@ -57,30 +57,17 @@ function arctic_featured_post_id(){
 }
 
 /**
- * [arctic_do_slider_content description]
+ * [arctic_black_do_slider_content description]
  * @return [type] [description]
  */
-function arctic_do_slider_content(){
+function arctic_black_do_slider_content(){
 	get_template_part( 'template-parts/content', 'slider' );
 }
 
-/** Get content instagram */
-function arctic_do_instagram_footer(){
-	get_template_part( 'template-parts/footer', 'instagram' );
-}
-
 /**
- * [arctic_is_sticky description]
+ * [arctic_black_is_sticky description]
  * @return bool
  */
-function arctic_is_sticky(){
+function arctic_black_is_sticky(){
 	return (bool) is_sticky() && !is_paged() && !is_singular() && !is_archive();
-}
-
-/**
- * [arctic_is_custom_template description]
- * @return bool
- */
-function arctic_is_custom_template(){
-	return (bool) is_page_template( 'page-templates/canvas.php' ) || is_page_template( 'page-templates/full-width-narrow.php' ) || is_page_template( 'page-templates/full-width.php' );
 }

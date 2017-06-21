@@ -2,7 +2,7 @@
 /**
  * Featured Content
  *
- * @package Arctic
+ * @package Arctic Black
  */
 
 if ( get_theme_mod( 'enable_slider' ) == false ) {
@@ -12,7 +12,7 @@ if ( get_theme_mod( 'enable_slider' ) == false ) {
 	return;
 }
 
-$arctic_featured = new WP_Query( array(
+$arctic_black_featured = new WP_Query( array(
 	'cat'     			=> absint( get_theme_mod( 'slider_cat', 1 ) ),
 	'posts_per_page' 	=> absint( get_theme_mod( 'slides_num', 5 ) ),
 	'orderby'        	=> get_theme_mod( 'slider_orderby', 'date' ),
@@ -21,11 +21,11 @@ $arctic_featured = new WP_Query( array(
 	'no_found_rows'  	=> true,
 ) );
 
-if ( $arctic_featured->have_posts() ) : ?>
+if ( $arctic_black_featured->have_posts() ) : ?>
 
 	<div id="featured-content" class="featured-content">
 
-		<?php while ( $arctic_featured->have_posts() ) : $arctic_featured->the_post(); ?>
+		<?php while ( $arctic_black_featured->have_posts() ) : $arctic_black_featured->the_post(); ?>
 
 		<?php
 

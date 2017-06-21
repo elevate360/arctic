@@ -2,7 +2,7 @@
 /**
  * Menu Social
  *
- * @package Arctic
+ * @package Arctic Black
  */
 
 if ( has_nav_menu ( 'menu-2' ) ) : ?>

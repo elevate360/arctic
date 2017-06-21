@@ -125,12 +125,17 @@
 	z-index: -1;
 }
 
-.site-info {
+.site-info,
+.site-design {
 	text-transform: uppercase;
 	@include font-size(0.875);
 	letter-spacing: .1rem;
-	padding: 1rem 0;
 	text-align: center;
+}
+
+.site-info {
+	padding-top: 1rem;
+	margin-bottom: 0;
 }
 
 .site-footer {

@@ -173,10 +173,20 @@ module.exports = function (grunt) {
 					'sass/site/*.scss',
 					'sass/site/**/*.scss',
 					'sass/typography/*.scss',
-					'sass/variables-site/*.scss'
+					'sass/variables-site/*.scss',
+					'assets/js/arctic.js',
+					'assets/js/customizer.js'
 				],
 				tasks: [
-					'sass',
+					'sass'
+				]
+			},
+			js: {
+				files: [
+					'assets/js/arctic.js',
+					'assets/js/customizer.js'
+				],
+				tasks: [
 					'uglify'
 				]
 			}

@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Arctic
+ * @package Arctic Black
  */
 
 ?><!DOCTYPE html>
@@ -23,20 +23,20 @@
 <div id="page" class="site">
 
 	<?php if( has_nav_menu( 'menu-1' ) ) :?>
-		<a class="skip-link screen-reader-text" href="#site-navigation"><?php esc_html_e( 'Skip to navigation', 'arctic' ); ?></a>
+		<a class="skip-link screen-reader-text" href="#site-navigation"><?php esc_html_e( 'Skip to navigation', 'arctic-black' ); ?></a>
 	<?php endif;?>
 
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'arctic' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'arctic-black' ); ?></a>
 
 	<?php if( is_active_sidebar( 'sidebar-2' ) ) :?>
-		<a class="skip-link screen-reader-text" href="#tertiary"><?php esc_html_e( 'Skip to footer', 'arctic' ); ?></a>
+		<a class="skip-link screen-reader-text" href="#tertiary"><?php esc_html_e( 'Skip to footer', 'arctic-black' ); ?></a>
 	<?php endif;?>
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="wrap">
 			<div class="site-branding">
 				<?php
-				arctic_custom_logo();
+				arctic_black_custom_logo();
 				if ( is_front_page() && is_home() ) : ?>
 					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php else : ?>

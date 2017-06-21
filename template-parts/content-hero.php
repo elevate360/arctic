@@ -2,7 +2,7 @@
 /**
  * The template part for displaying Hero section
  *
- * @package Arctic
+ * @package Arctic Black
  */
 
 $term_id = ( is_archive() ) ? get_queried_object()->term_id : '';
@@ -14,7 +14,7 @@ $has_post_thumbnail = ( is_singular() && has_post_thumbnail( get_the_id() ) || i
 <div id="section-hero" class="section-hero<?php echo esc_attr( $has_post_thumbnail );?>">
 
 <?php if( is_home() ) : ?>
-	<?php arctic_do_slider_content();?>
+	<?php arctic_black_do_slider_content();?>
 <?php endif;?>
 
 <?php if( is_singular() || is_archive() ) :?>

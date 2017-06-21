@@ -6,7 +6,7 @@
  * since this theme is not meant to be backward compatible beyond that and
  * relies on many newer functions and markup changes introduced in 4.7.
  *
- * @package Arctic
+ * @package Arctic Black
  */
 
 /**
@@ -16,12 +16,12 @@
  *
  * @since Arctic 1.0.0
  */
-function arctic_switch_theme() {
+function arctic_black_switch_theme() {
 	switch_theme( WP_DEFAULT_THEME );
 	unset( $_GET['activated'] );
-	add_action( 'admin_notices', 'arctic_upgrade_notice' );
+	add_action( 'admin_notices', 'arctic_black_upgrade_notice' );
 }
-add_action( 'after_switch_theme', 'arctic_switch_theme' );
+add_action( 'after_switch_theme', 'arctic_black_switch_theme' );
 
 /**
  * Adds a message for unsuccessful theme switch.
@@ -33,8 +33,8 @@ add_action( 'after_switch_theme', 'arctic_switch_theme' );
  *
  * @global string $wp_version WordPress version.
  */
-function arctic_upgrade_notice() {
-	$message = sprintf( __( 'Arctic requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'arctic' ), $GLOBALS['wp_version'] );
+function arctic_black_upgrade_notice() {
+	$message = sprintf( __( 'Arctic requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'arctic-black' ), $GLOBALS['wp_version'] );
 	printf( '<div class="error"><p>%s</p></div>', $message );
 }
 
@@ -45,12 +45,12 @@ function arctic_upgrade_notice() {
  *
  * @global string $wp_version WordPress version.
  */
-function arctic_customize() {
-	wp_die( sprintf( __( 'Arctic requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'arctic' ), $GLOBALS['wp_version'] ), '', array(
+function arctic_black_customize() {
+	wp_die( sprintf( __( 'Arctic requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'arctic-black' ), $GLOBALS['wp_version'] ), '', array(
 		'back_link' => true,
 	) );
 }
-add_action( 'load-customize.php', 'arctic_customize' );
+add_action( 'load-customize.php', 'arctic_black_customize' );
 
 /**
  * Prevents the Theme Preview from being loaded on WordPress versions prior to 4.7.
@@ -59,9 +59,9 @@ add_action( 'load-customize.php', 'arctic_customize' );
  *
  * @global string $wp_version WordPress version.
  */
-function arctic_preview() {
+function arctic_black_preview() {
 	if ( isset( $_GET['preview'] ) ) {
-		wp_die( sprintf( __( 'Arctic requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'arctic' ), $GLOBALS['wp_version'] ) );
+		wp_die( sprintf( __( 'Arctic requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'arctic-black' ), $GLOBALS['wp_version'] ) );
 	}
 }
-add_action( 'template_redirect', 'arctic_preview' );
+add_action( 'template_redirect', 'arctic_black_preview' );

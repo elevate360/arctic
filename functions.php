@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Arctic
+ * @package Arctic Black
  */
 
 /**
@@ -15,7 +15,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 	return;
 }
 
-if ( ! function_exists( 'arctic_setup' ) ) :
+if ( ! function_exists( 'arctic_black_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -23,16 +23,16 @@ if ( ! function_exists( 'arctic_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function arctic_setup() {
+function arctic_black_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on Arctic, use a find and replace
-	 * to change 'arctic' to the name of your theme in all the template files.
+	 * to change 'arctic-black' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'arctic', trailingslashit( WP_LANG_DIR ) . 'themes/' );
-	load_theme_textdomain( 'arctic', get_stylesheet_directory() . '/languages' );
-	load_theme_textdomain( 'arctic', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'arctic-black', trailingslashit( WP_LANG_DIR ) . 'themes/' );
+	load_theme_textdomain( 'arctic-black', get_stylesheet_directory() . '/languages' );
+	load_theme_textdomain( 'arctic-black', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -62,9 +62,9 @@ function arctic_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		/** Primary (menu location) */
-		'menu-1' => esc_html__( 'Primary', 'arctic' ),
+		'menu-1' => esc_html__( 'Primary', 'arctic-black' ),
 		/** SOcial Link (menu location) */
-		'menu-2' => esc_html__( 'Social Link', 'arctic' ),
+		'menu-2' => esc_html__( 'Social Link', 'arctic-black' ),
 	) );
 
 	/*
@@ -93,7 +93,7 @@ function arctic_setup() {
 
 }
 endif;
-add_action( 'after_setup_theme', 'arctic_setup' );
+add_action( 'after_setup_theme', 'arctic_black_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -102,64 +102,64 @@ add_action( 'after_setup_theme', 'arctic_setup' );
  *
  * @global int $content_width
  */
-function arctic_content_width() {
+function arctic_black_content_width() {
 
 	$content_width = $GLOBALS['content_width'];
 
-	$GLOBALS['content_width'] = apply_filters( 'arctic_content_width', $content_width );
+	$GLOBALS['content_width'] = apply_filters( 'arctic_black_content_width', $content_width );
 
 }
-add_action( 'template_redirect', 'arctic_content_width', 0 );
+add_action( 'template_redirect', 'arctic_black_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function arctic_widgets_init() {
+function arctic_black_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'arctic' ),
+		'name'          => esc_html__( 'Sidebar', 'arctic-black' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'arctic' ),
+		'description'   => esc_html__( 'Add widgets here.', 'arctic-black' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 1', 'arctic' ),
+		'name'          => esc_html__( 'Footer 1', 'arctic-black' ),
 		'id'            => 'sidebar-2',
-		'description'   => esc_html__( 'Add widgets here.', 'arctic' ),
+		'description'   => esc_html__( 'Add widgets here.', 'arctic-black' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 2', 'arctic' ),
+		'name'          => esc_html__( 'Footer 2', 'arctic-black' ),
 		'id'            => 'sidebar-3',
-		'description'   => esc_html__( 'Add widgets here.', 'arctic' ),
+		'description'   => esc_html__( 'Add widgets here.', 'arctic-black' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => esc_html__( 'After Footer', 'arctic' ),
+		'name'          => esc_html__( 'After Footer', 'arctic-black' ),
 		'id'            => 'sidebar-4',
-		'description'   => esc_html__( 'Add widgets here.', 'arctic' ),
+		'description'   => esc_html__( 'Add widgets here.', 'arctic-black' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'arctic_widgets_init' );
+add_action( 'widgets_init', 'arctic_black_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function arctic_scripts() {
+function arctic_black_scripts() {
 
 	wp_dequeue_style( 'contact-form-7' );
 
@@ -182,7 +182,7 @@ function arctic_scripts() {
 	}
 
 }
-add_action( 'wp_enqueue_scripts', 'arctic_scripts' );
+add_action( 'wp_enqueue_scripts', 'arctic_black_scripts' );
 
 
 /**

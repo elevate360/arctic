@@ -1,3 +1,7 @@
+.bypostauthor {
+	display: block;
+}
+
 .comments-title {
 	@include font-size(2);
 	margin-bottom: 1.5rem;
@@ -68,7 +72,10 @@
 
 .comment-content {
 	padding-top: 1.5em;
-	word-wrap: break-word;
+	&,
+	a {
+		word-wrap: break-word;
+	}
 }
 
 .comment-body > .reply a {

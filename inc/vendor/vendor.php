@@ -2,7 +2,7 @@
 /**
  * Arctic vendor configuration.
  *
- * @package Arctic
+ * @package Arctic Black
  */
 
 /**
@@ -13,7 +13,7 @@ require_once get_template_directory() . '/inc/vendor/class-tgm-plugin-activation
 /**
  * Register the required plugins for this theme.
  */
-function arctic_register_required_plugins() {
+function arctic_black_register_required_plugins() {
 	/*
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
@@ -22,14 +22,14 @@ function arctic_register_required_plugins() {
 
 		array(
 			/* Recommended plugin name */
-			'name'      => __( 'WP Term Images', 'arctic' ),
+			'name'      => __( 'WP Term Images', 'arctic-black' ),
 			'slug'      => 'wp-term-images',
 			'required'  => false,
 		),
 
 		array(
 			/* Recommended plugin name */
-			'name'      => __( 'WP Instagram Widget', 'arctic' ),
+			'name'      => __( 'WP Instagram Widget', 'arctic-black' ),
 			'slug'      => 'wp-instagram-widget',
 			'required'  => false,
 		)
@@ -40,7 +40,7 @@ function arctic_register_required_plugins() {
 	 * Array of configuration settings.
 	 */
 	$config = array(
-		'id'           => 'arctic',
+		'id'           => 'arctic-black',
 		'default_path' => '',
 		'menu'         => 'tgmpa-install-plugins',
 		'has_notices'  => true,
@@ -53,4 +53,4 @@ function arctic_register_required_plugins() {
 	tgmpa( $plugins, $config );
 
 }
-add_action( 'tgmpa_register', 'arctic_register_required_plugins' );
+add_action( 'tgmpa_register', 'arctic_black_register_required_plugins' );

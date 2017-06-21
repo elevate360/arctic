@@ -2,7 +2,7 @@
 /**
  * The template part for displaying an Author biography
  *
- * @package Arctic
+ * @package Arctic Black
  */
 ?>
 
@@ -15,7 +15,7 @@
 		 *
 		 * @param int $size The avatar height and width size in pixels.
 		 */
-		$author_bio_avatar_size = apply_filters( 'arctic_author_bio_avatar_size', 96 );
+		$author_bio_avatar_size = apply_filters( 'arctic_black_author_bio_avatar_size', 96 );
 
 		echo get_avatar( get_the_author_meta( 'user_email' ), $author_bio_avatar_size );
 		?>

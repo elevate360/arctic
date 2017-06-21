@@ -2,22 +2,22 @@
 /**
  * Arctic Theme Customizer
  *
- * @package Arctic
+ * @package Arctic Black
  */
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function arctic_customize_preview_js() {
-	wp_enqueue_script( 'arctic_customizer', get_template_directory_uri() . '/assets/js/customizer.min.js', array( 'customize-preview', 'customize-selective-refresh' ), '20151215', true );
+function arctic_black_customize_preview_js() {
+	wp_enqueue_script( 'arctic_black_customizer', get_template_directory_uri() . '/assets/js/customizer.min.js', array( 'customize-preview', 'customize-selective-refresh' ), '20151215', true );
 }
-add_action( 'customize_preview_init', 'arctic_customize_preview_js' );
+add_action( 'customize_preview_init', 'arctic_black_customize_preview_js' );
 
 /**
- * [arctic_setting_default description]
+ * [arctic_black_setting_default description]
  * @return [type] [description]
  */
-function arctic_setting_default(){
+function arctic_black_setting_default(){
 	$settings = array(
 		'primary_color'		=> '#EC407A',
 		'secondary_color'	=> '#F06292',
@@ -35,7 +35,7 @@ function arctic_setting_default(){
 		'footer_image'		=> get_template_directory_uri() . '/assets/images/footer-image.jpg',
 	);
 
-	return apply_filters( 'arctic_setting_default', $settings );
+	return apply_filters( 'arctic_black_setting_default', $settings );
 }
 
 /**
@@ -47,7 +47,7 @@ require get_template_directory() . '/inc/customizer/setting-general.php';
 /**
  * Arctic custom logo, header and background
  */
-function arctic_custom_logo_header_and_background(){
+function arctic_black_custom_logo_header_and_background(){
 
 	/** Enable support for custom logo */
 	add_theme_support( 'custom-logo', array(
@@ -59,7 +59,7 @@ function arctic_custom_logo_header_and_background(){
 	) );
 
 	/** Custom Header */
-	add_theme_support( 'custom-header', apply_filters( 'arctic_custom_header_args', array(
+	add_theme_support( 'custom-header', apply_filters( 'arctic_black_custom_header_args', array(
 		'width'       			=> 1600,
 		'height'      			=> 1600,
 		'default-image'          => '',
@@ -69,23 +69,23 @@ function arctic_custom_logo_header_and_background(){
 	) ) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'arctic_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'arctic_black_custom_background_args', array(
 		'default-color' 		=> 'ffffff',
 		'default-repeat'        => 'no-repeat',
 		'default-attachment'    => 'scroll',
 	) ) );
 
 }
-add_action( 'after_setup_theme', 'arctic_custom_logo_header_and_background' );
+add_action( 'after_setup_theme', 'arctic_black_custom_logo_header_and_background' );
 
 /**
  * Print inline style
  *
  * @return string
  */
-function arctic_add_inline_style(){
+function arctic_black_add_inline_style(){
 
-	$setting = arctic_setting_default();
+	$setting = arctic_black_setting_default();
 
 	$css= '';
 
@@ -159,19 +159,19 @@ function arctic_add_inline_style(){
 		';
 	}
 
-	if ( get_theme_mod( 'post_date' ) == 'blank' ) {
+	if ( get_theme_mod( 'post_date', $setting['post_date'] ) == false ) {
 		$css .= '.entry-meta .posted-on{ display: none }';
 	}
 
-	if ( get_theme_mod( 'post_author' ) == 'blank' ) {
+	if ( get_theme_mod( 'post_author', $setting['post_author'] ) == false ) {
 		$css .= '.entry-meta .byline{ display: none }';
 	}
 
-	if ( get_theme_mod( 'post_cat' ) == 'blank' ) {
+	if ( get_theme_mod( 'post_cat', $setting['post_cat'] ) == false ) {
 		$css .= '.entry-footer .cat-links{ display: none }';
 	}
 
-	if ( get_theme_mod( 'post_tag' ) == 'blank' ) {
+	if ( get_theme_mod( 'post_tag', $setting['post_tag'] ) == false ) {
 		$css .= '.entry-footer .tags-links{ display: none }';
 	}
 
@@ -195,6 +195,7 @@ function arctic_add_inline_style(){
 	';
 	$primary_color_text_color = '
 		a,
+		.sticky-label,
 		.widget_nav_menu a:hover,
 		.widget_nav_menu a:focus,
 		.widget_nav_menu li.current_page_item > a,
@@ -273,35 +274,36 @@ function arctic_add_inline_style(){
 		$css .= sprintf( '%s{ background-color: %s }', $secondary_color_background_color, esc_attr( $secondary_color ) );
 		$css .= sprintf( '%s{ color: %s }', $secondary_color_text_color, esc_attr( $secondary_color ) );
 		//$css .= sprintf( '%s{ border-color: %s }', $secondary_color_border_color, esc_attr( $secondary_color ) );
+		$css .= sprintf( '::selection{background-color:%1$s}::-moz-selection{background-color:%1$s}', esc_attr( $secondary_color ) );
 	}
 
     $css = str_replace( array( "\n", "\t", "\r" ), '', $css );
 
 	if ( ! empty( $css ) ) {
-		wp_add_inline_style( 'arctic-style', apply_filters( 'arctic_inline_style', trim( $css ) ) );
+		wp_add_inline_style( 'arctic-style', apply_filters( 'arctic_black_inline_style', trim( $css ) ) );
 	}
 
 }
-add_action( 'wp_enqueue_scripts', 'arctic_add_inline_style' );
+add_action( 'wp_enqueue_scripts', 'arctic_black_add_inline_style' );
 
 /**
- * [arctic_customizer_style_placeholder description]
+ * [arctic_black_customizer_style_placeholder description]
  * @return [type] [description]
  */
-function arctic_customizer_style_placeholder(){
+function arctic_black_customizer_style_placeholder(){
 	if ( is_customize_preview() ) {
 		echo '<style id="primary-color"></style>';
 		echo '<style id="secondary-color"></style>';
 	}
 }
-add_action( 'wp_head', 'arctic_customizer_style_placeholder', 15 );
+add_action( 'wp_head', 'arctic_black_customizer_style_placeholder', 15 );
 
 /**
- * [arctic_editor_style description]
+ * [arctic_black_editor_style description]
  * @param  [type] $mceInit [description]
  * @return [type]          [description]
  */
-function arctic_editor_style( $mceInit ) {
+function arctic_black_editor_style( $mceInit ) {
 
 	$primary_color 			= get_theme_mod( 'primary_color', '#f06292' );
 	$secondary_color 		= get_theme_mod( 'secondary_color', '#f7a8c2' );
@@ -323,5 +325,5 @@ function arctic_editor_style( $mceInit ) {
 	return $mceInit;
 
 }
-add_filter( 'tiny_mce_before_init', 'arctic_editor_style' );
+add_filter( 'tiny_mce_before_init', 'arctic_black_editor_style' );
 

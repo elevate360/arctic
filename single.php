@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package Arctic
+ * @package Arctic Black
  */
 
 get_header(); ?>
@@ -13,7 +13,7 @@ get_header(); ?>
 		<div class="wrap">
 			<main id="main" class="site-main" role="main">
 
-			<?php arctic_do_breadcrumb();?>
+			<?php arctic_black_do_breadcrumb();?>
 
 			<?php
 			while ( have_posts() ) : the_post();
@@ -25,9 +25,9 @@ get_header(); ?>
 				}
 
 				the_post_navigation( array(
-				    'prev_text'                  => __( '<span>&larr; previous post</span> %title', 'arctic' ),
-				    'next_text'                  => __( '<span>next post &rarr;</span> %title', 'arctic' ),
-				    'screen_reader_text'		 => __( 'Continue Reading', 'arctic' ),
+				    'prev_text'                  => __( '<span>&larr; previous post</span> %title', 'arctic-black' ),
+				    'next_text'                  => __( '<span>next post &rarr;</span> %title', 'arctic-black' ),
+				    'screen_reader_text'		 => __( 'Continue Reading', 'arctic-black' ),
 				) );
 
 				// If comments are open or we have at least one comment, load up the comment template.

@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Arctic
+ * @package Arctic Black
  */
 
 get_header(); ?>
@@ -27,7 +27,7 @@ get_header(); ?>
 
 			endwhile;
 
-			arctic_posts_navigation();
+			arctic_black_posts_navigation();
 
 		else :
 
