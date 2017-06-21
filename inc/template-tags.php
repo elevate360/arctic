@@ -249,6 +249,7 @@ function arctic_black_do_footer_copyright(){
 
 	if ( !empty( $footer_copyright ) ) {
 		$footer_copyright = str_replace( '[YEAR]', date_i18n( __('Y', 'arctic-black' ) ), $footer_copyright );
+		$footer_copyright = str_replace( '[SITE]', '<a href="'. esc_url( home_url() ) .'">'. esc_attr( get_bloginfo( 'name' ) ) .'</a>', $footer_copyright );
 		echo htmlspecialchars_decode( esc_attr( $footer_copyright ) );
 	} else {
 		arctic_black_footer_copyright();

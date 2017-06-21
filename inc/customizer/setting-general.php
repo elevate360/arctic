@@ -343,7 +343,7 @@ function arctic_black_customize_register( $wp_customize ) {
 		'footer_copyright',
 		array(
 			'label'    		=> __( 'Footer copyright', 'arctic-black' ),
-			'description'	=> __( 'Use [YEAR] for dynamic current year.', 'arctic-black' ),
+			'description'	=> __( 'Use [YEAR] for dynamic current year. Use [SITE] to render site link.', 'arctic-black' ),
 			'section'  		=> 'footer_area',
 			'settings' 		=> 'footer_copyright',
 			'type'     		=> 'textarea'
