@@ -131,7 +131,7 @@ function arctic_black_add_inline_style(){
 
 	if ( is_singular() && has_post_thumbnail( get_the_id() ) ) {
 		$image_id 	= get_post_thumbnail_id();
-		$image 		= wp_get_attachment_image_src( $image_id, 'full' );
+		$image 		= wp_get_attachment_image_src( $image_id, 'arctic-large' );
 		$css .= '
 			.hero-image {
 				background-image: url("'. esc_url( $image[0] ) .'");
@@ -142,7 +142,7 @@ function arctic_black_add_inline_style(){
 	$term_id 	= ( is_archive() ) ? get_queried_object()->term_id : '';
 	if ( is_archive() && $term_id ) {
 		$image_id 	= get_term_meta( $term_id, 'image', true );
-		$image 		= wp_get_attachment_image_src( $image_id, 'full' );
+		$image 		= wp_get_attachment_image_src( $image_id, 'arctic-large' );
 		$css .= '
 			.hero-image {
 				background-image: url("'. esc_url( $image[0] ) .'");

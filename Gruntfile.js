@@ -294,7 +294,6 @@ module.exports = function (grunt) {
 		'replace',
 		'css',
 		'uglify',
-		'makepot',
 		'clean',
 		'copy',
 		'compress'
