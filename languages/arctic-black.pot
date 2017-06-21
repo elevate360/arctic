@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctic Black 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/elevate360/arctic/issues/new\n"
-"POT-Creation-Date: 2017-06-21 22:53:52+00:00\n"
+"POT-Creation-Date: 2017-06-21 23:15:43+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -228,7 +228,7 @@ msgstr ""
 msgid "Use [YEAR] for dynamic current year. Use [SITE] to render site link."
 msgstr ""
 
-#: inc/extras.php:69
+#: inc/extras.php:83
 #. Translators: Used as a placeholder for untitled posts on non-singular views.
 msgid "(Untitled)"
 msgstr ""

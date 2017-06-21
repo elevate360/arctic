@@ -7,6 +7,23 @@
  * @package Arctic Black
  */
 
+if ( ! function_exists( 'arctic_black_hook_more_filters' ) ) :
+/**
+ * Hook filters to the front-end only.
+ */
+function arctic_black_hook_more_filters() {
+	add_filter( 'body_class', 'arctic_black_body_classes' );
+	add_filter( 'post_class', 'arctic_black_post_classes' );
+	add_action( 'wp_head', 'arctic_black_pingback_header' );
+	add_filter( 'the_title', 'arctic_black_untitled_post' );
+	if ( is_singular() ) {
+		add_filter( 'embed_defaults', 'arctic_black_default_embed_size' );
+		add_filter( 'embed_oembed_html', 'arctic_black_mixcloud_oembed_parameter', 10, 3 );
+	}
+}
+endif;
+add_action( 'wp', 'arctic_black_hook_more_filters' );
+
 /**
  * Adds custom classes to the array of body classes.
  *
@@ -26,7 +43,6 @@ function arctic_black_body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'arctic_black_body_classes' );
 
 /**
  * Removes hentry class from the array of post classes.
@@ -45,7 +61,6 @@ function arctic_black_post_classes( $classes ) {
 	$classes[] = 'entry';
 	return $classes;
 }
-add_filter( 'post_class', 'arctic_black_post_classes' );
 
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
@@ -55,7 +70,6 @@ function arctic_black_pingback_header() {
 		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
 	}
 }
-add_action( 'wp_head', 'arctic_black_pingback_header' );
 
 /**
  * Add (Untitled) for post who doesn't have title
@@ -70,7 +84,14 @@ function arctic_black_untitled_post( $title ) {
 
 	return $title;
 }
-add_filter( 'the_title', 'arctic_black_untitled_post' );
+
+/**
+ * Fix embed height
+ * @return [type] [description]
+ */
+function arctic_black_default_embed_size(){
+	return array( 'width' => 780, 'height' => 180 );
+}
 
 /**
  * [arctic_black_mixcloud_oembed_parameter description]
