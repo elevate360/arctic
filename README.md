@@ -1,5 +1,17 @@
-Arctic Black
-===
+# Arctic Black
+
+**Contributors:** elevate360
+**Requires at least:** WordPress 4.7
+**Tested up to:** WordPress 4.8
+**Stable tag:** 1.0.1
+**Version:** 1.0.1
+**License:** GPLv2 or later
+**License URI:** http://www.gnu.org/licenses/gpl-2.0.html
+**Tags:** one-column, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, microformats, sticky-post, threaded-comments, translation-ready, blog
+
+The Arctic Black Theme is built for photographers and designers with a passion for large visual images and detailed posts with elegant typography.
+
+## Description
 
 The Arctic Black Theme is built for photographers and designers with a passion for large visual images and detailed posts with elegant typography.
 
@@ -10,19 +22,72 @@ Arctic Black comes with the ability to have granular control over fonts and post
 
 Create a fantastic, bold and sleek looking website design using Arctic.
 
-Copyright and License
----
-* [Sanitization Callbacks](https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php) by [WPTRT](https://github.com/WPTRT) - [GPL-2.0+](https://github.com/WPTRT/code-examples/blob/master/LICENSE)
-* [TGM Plugin Activation](http://tgmpluginactivation.com/) by [Thomas Griffin](https://thomasgriffin.io/) - [GPL-2.0+](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
-* [Fitvids](https://github.com/davatron5000/FitVids.js) by [Chris Coyier](http://chriscoyier.net/) and [Paravel](http://paravelinc.com/) - [WTFPL](http://sam.zoy.org/wtfpl/)
-* [Jquery Slick](http://kenwheeler.github.io) by [Ken Wheeler](http://kenwheeler.github.io) - [MIT](https://opensource.org/licenses/mit-license.html)
-* [FontAwesome](http://fontawesome.io/) by [Dave Gandy](http://twitter.com/davegandy) - [SIL](http://scripts.sil.org/OFL) & [MIT](https://opensource.org/licenses/mit-license.html)
+
+## Frequently Asked Questions
+
+- How to change Atlantic theme fonts?
+You can easily install and use Easy Google Fonts plugin.
+
+## Copyright
+
+Atlantic WordPress Theme, Copyright 2016 WordPress.org
+Atlantic is distributed under the terms of the GNU GPL
+
+Atlantic bundles the following third-party resources:
+
+- Based on Underscores, (C) 2012-2017 Automattic, Inc.
+**License:** GPLv2 or later
+Source: http://underscores.me/
+
+- normalize.css, Copyright 2012-2016 Nicolas Gallagher and Jonathan Neal
+**License:** MIT
+Source: https://necolas.github.io/normalize.css/
+
+- html5shiv by [aFarkas](https://github.com/aFarkas)
+**License:** MIT and GPL-2.0
+Source: https://github.com/aFarkas/html5shiv
+
+- nwmatcher by [dperini](https://github.com/dperini)
+**License:** MIT
+Source: https://github.com/dperini/nwmatcher
+
+- Respond by [scottjehli](https://github.com/scottjehli)
+**License:** MIT
+Source: https://github.com/scottjehl/Respond
+
+- selectivizr by [keithclark](https://github.com/keithclark)
+**License:** MIT
+Source: https://github.com/keithclark/selectivizr
+
+- Fitvids by [Chris Coyier](http://chriscoyier.net/) and [Paravel](http://paravelinc.com/)
+**License:** WTFPL
+Source: https://github.com/davatron5000/FitVids.js
+
+- Slick by [Ken Wheeler](https://github.com/kenwheeler)
+**License:** MIT
+Source: http://kenwheeler.github.io/slick/
+
+- Sanitization Callbacks by [WPTRT](https://github.com/WPTRT)
+**License:** GPL-2.0+
+Source: https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php
+
+- FontAwesome by [Dave Gandy](http://twitter.com/davegandy)
+**License:** SIL & MIT
+Source: http://fontawesome.io/
+
+- Screenshot image, Pixabay
+**License:** CC0 1.0 Universal (CC0 1.0)
+Source:
 * Screenshot image:
 	* https://unsplash.com/@lukasbecker?photo=OjVIrvBKWP8
 * Default footer image:
 	* https://unsplash.com/@matt_47?photo=Shtg0KZyo3Q
 
-All other resources and theme elements are licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
+## Changelog
 
-Arctic Black free WordPress theme, 2017 &copy; [Elevate](https://elevate360.com.au).
-Distributed free under the terms of the GNU GPL.
+### 1.2.0 - September 18, 2017
+* Major update
+* Added WooCommerce support
+
+### 1.0.0 - August 6, 2017
+* Initial release

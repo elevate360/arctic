@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctic Black 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/elevate360/arctic/issues/new\n"
-"POT-Creation-Date: 2017-06-21 23:15:43+00:00\n"
+"POT-Creation-Date: 2017-09-17 18:54:47+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -33,19 +33,15 @@ msgid ""
 "links below or a search?"
 msgstr ""
 
-#: comments.php:53 comments.php:75
-msgid "Comment navigation"
+#: comments.php:53 comments.php:70
+msgid "&larr; Older comments"
 msgstr ""
 
-#: comments.php:56 comments.php:78
-msgid "Older Comments"
+#: comments.php:54 comments.php:71
+msgid "Newer comments &rarr;"
 msgstr ""
 
-#: comments.php:57 comments.php:79
-msgid "Newer Comments"
-msgstr ""
-
-#: comments.php:92
+#: comments.php:80
 msgid "Comments are closed."
 msgstr ""
 
@@ -99,132 +95,131 @@ msgid ""
 "Please upgrade and try again."
 msgstr ""
 
-#: inc/customizer/setting-general.php:19
+#: inc/customizer/settings.php:19
 msgid "Theme Settings"
 msgstr ""
 
-#: inc/customizer/setting-general.php:52
+#: inc/customizer/settings.php:52
 msgid "Link Color"
 msgstr ""
 
-#: inc/customizer/setting-general.php:53
+#: inc/customizer/settings.php:53
 msgid "Used for link, button "
 msgstr ""
 
-#: inc/customizer/setting-general.php:70
+#: inc/customizer/settings.php:70
 msgid "Hover Color"
 msgstr ""
 
-#: inc/customizer/setting-general.php:71
+#: inc/customizer/settings.php:71
 msgid "Used for link:hover, button:hover, selection."
 msgstr ""
 
-#: inc/customizer/setting-general.php:82
+#: inc/customizer/settings.php:82
 msgid "Content Slider"
 msgstr ""
 
-#: inc/customizer/setting-general.php:97
+#: inc/customizer/settings.php:97
 msgid "Enable Content Slider"
 msgstr ""
 
-#: inc/customizer/setting-general.php:114
+#: inc/customizer/settings.php:114
 msgid "Select Category"
 msgstr ""
 
-#: inc/customizer/setting-general.php:131
+#: inc/customizer/settings.php:131
 msgid "Number of posts to display"
 msgstr ""
 
-#: inc/customizer/setting-general.php:152
-#: inc/customizer/setting-general.php:177
+#: inc/customizer/settings.php:152 inc/customizer/settings.php:177
 msgid "Orderby"
 msgstr ""
 
-#: inc/customizer/setting-general.php:157
+#: inc/customizer/settings.php:157
 msgid "Post ID"
 msgstr ""
 
-#: inc/customizer/setting-general.php:158
+#: inc/customizer/settings.php:158
 msgid "Author"
 msgstr ""
 
-#: inc/customizer/setting-general.php:159
+#: inc/customizer/settings.php:159
 msgid "Date"
 msgstr ""
 
-#: inc/customizer/setting-general.php:160
+#: inc/customizer/settings.php:160
 msgid "Title"
 msgstr ""
 
-#: inc/customizer/setting-general.php:161
+#: inc/customizer/settings.php:161
 msgid "Comment count"
 msgstr ""
 
-#: inc/customizer/setting-general.php:162
+#: inc/customizer/settings.php:162
 msgid "Last Modified Date"
 msgstr ""
 
-#: inc/customizer/setting-general.php:163
+#: inc/customizer/settings.php:163
 msgid "Random"
 msgstr ""
 
-#: inc/customizer/setting-general.php:182
+#: inc/customizer/settings.php:182
 msgid "Lowest to highest values"
 msgstr ""
 
-#: inc/customizer/setting-general.php:183
+#: inc/customizer/settings.php:183
 msgid "Highest to lowest values"
 msgstr ""
 
-#: inc/customizer/setting-general.php:192
+#: inc/customizer/settings.php:192
 msgid "Blog Setting"
 msgstr ""
 
-#: inc/customizer/setting-general.php:208
+#: inc/customizer/settings.php:208
 msgid "Display Post Date"
 msgstr ""
 
-#: inc/customizer/setting-general.php:226
+#: inc/customizer/settings.php:226
 msgid "Display Post Author"
 msgstr ""
 
-#: inc/customizer/setting-general.php:244
+#: inc/customizer/settings.php:244
 msgid "Display Post Category"
 msgstr ""
 
-#: inc/customizer/setting-general.php:262
+#: inc/customizer/settings.php:262
 msgid "Display Post Tag"
 msgstr ""
 
-#: inc/customizer/setting-general.php:280
+#: inc/customizer/settings.php:280
 msgid "Display Author biography at single post"
 msgstr ""
 
-#: inc/customizer/setting-general.php:298
+#: inc/customizer/settings.php:298
 msgid "Posts Navigation"
 msgstr ""
 
-#: inc/customizer/setting-general.php:303
+#: inc/customizer/settings.php:303
 msgid "Prev / Next"
 msgstr ""
 
-#: inc/customizer/setting-general.php:304
+#: inc/customizer/settings.php:304
 msgid "Numeric"
 msgstr ""
 
-#: inc/customizer/setting-general.php:313
+#: inc/customizer/settings.php:313
 msgid "Footer"
 msgstr ""
 
-#: inc/customizer/setting-general.php:329
+#: inc/customizer/settings.php:329
 msgid "Footer widgets background"
 msgstr ""
 
-#: inc/customizer/setting-general.php:345
+#: inc/customizer/settings.php:345
 msgid "Footer copyright"
 msgstr ""
 
-#: inc/customizer/setting-general.php:346
+#: inc/customizer/settings.php:346
 msgid "Use [YEAR] for dynamic current year. Use [SITE] to render site link."
 msgstr ""
 

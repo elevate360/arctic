@@ -122,21 +122,18 @@
 
 	api( 'primary_color', function( value ){
 		value.bind( function( to ) {
-			var primaryColorBgColor 	= 'button, input[type="button"], input[type="reset"], input[type="submit"], a.post-edit-link, .comment-body > .reply a, .sidebar-toggled .sidebar-toggle:hover span:before, .sidebar-toggled .sidebar-toggle:hover span:after, .sidebar-toggled .sidebar-toggle:focus span:before, .sidebar-toggled .sidebar-toggle:focus span:after, .page-numbers:hover:not(.current), .page-numbers:focus:not(.current), .widget_tag_cloud a:hover, .widget_tag_cloud a:focus',
-				primaryColorTextColor 	= 'a, .widget_nav_menu a:hover, .widget_nav_menu a:focus, .widget_nav_menu li.current_page_item > a, .widget_nav_menu li.current-menu-item > a, .social-links ul a:hover, .social-links ul a:focus',
-				primaryColorBorderColor = '.widget_tag_cloud a:hover,.widget_tag_cloud a:focus';
-
-			$( '#primary-color' ).text( primaryColorBgColor + '{background-color:'+ to +'}' + primaryColorTextColor + '{color:'+ to +'}' + primaryColorBorderColor + '{border-color:'+ to +'}' );
+			$( '#primary-color' ).text(
+				ArcticBlackCustomizerl10n.primary_color_background + '{background-color:'+ to +'}' +
+				ArcticBlackCustomizerl10n.primary_color_border + '{border-color:'+ to +'}' +
+				ArcticBlackCustomizerl10n.primary_color_text + '{color:'+ to +'}' );
 		} );
 	} );
 
 	api( 'secondary_color', function( value ){
 		value.bind( function( to ) {
-			var secondaryColorBgColor 	= 'button:hover, button:active, button:focus, input[type="button"]:hover, input[type="button"]:active, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:active, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus, a.post-edit-link:hover, a.post-edit-link:focus, .comment-body > .reply a:hover, .comment-body > .reply a:active, .comment-body > .reply a:focus',
-				secondaryColorTextColor = 'a:hover, a:focus, .featured-content .entry-title a:hover, .featured-content .entry-title a:focus, .home .site-main .entry-title a:hover, .home .site-main .entry-title a:focus, .archive .site-main .entry-title a:hover, .archive .site-main .entry-title a:focus, .entry-meta a:hover, .entry-meta a:focus, .cat-links a:hover, .cat-links a:focus, .tags-links a:hover, .tags-links a:focus, .comments-link a:hover, .comments-link a:focus, .comment-navigation a:hover, .comment-navigation a:focus, .posts-navigation a:hover, .posts-navigation a:focus, .post-navigation a:hover, .post-navigation a:focus, .comment-meta a:hover, .comment-meta a:focus, .author-title a:hover, .author-title a:focus, .site-footer a:hover, .site-footer a:focus',
-				secondaryColorBorderColor = '.widget_tag_cloud a:hover,.widget_tag_cloud a:focus';
-
-			$( '#secondary-color' ).text( secondaryColorBgColor + '{background-color:'+ to +'}' + secondaryColorTextColor + '{color:'+ to +'}' + secondaryColorBorderColor + '{border-color:'+ to +'}' );
+			$( '#secondary-color' ).text(
+				ArcticBlackCustomizerl10n.secondary_color_background + '{background-color:'+ to +'}' +
+				ArcticBlackCustomizerl10n.secondary_color_text + '{color:'+ to +'}' );
 		} );
 	} );
 

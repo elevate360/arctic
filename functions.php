@@ -172,6 +172,18 @@ function arctic_black_scripts() {
 	/** Styles */
 	wp_enqueue_style( 'arctic-style', get_stylesheet_uri() );
 
+	wp_enqueue_script( 'html5', get_theme_file_uri( '/assets/vendor/js/html5.js' ), array(), '3.7.3' );
+	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
+
+	wp_enqueue_script( 'respond', get_theme_file_uri( '/assets/vendor/js/respond.js' ), array(), '1.4.2' );
+	wp_script_add_data( 'respond', 'conditional', 'lt IE 9' );
+
+	wp_enqueue_script( 'nwmatcher', get_theme_file_uri( '/assets/vendor/js/nwmatcher.js' ), array(), '1.4.1' );
+	wp_script_add_data( 'nwmatcher', 'conditional', 'lt IE 9' );
+
+	wp_enqueue_script( 'selectivizr', get_theme_file_uri( '/assets/vendor/js/selectivizr.js' ), array(), '1.0.2' );
+	wp_script_add_data( 'selectivizr', 'conditional', 'lt IE 9' );
+
 	/** Scripts */
 	wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/assets/js/fitvids/jquery.fitvids.min.js', array( 'jquery' ), '1.2.0', true );
 	wp_enqueue_script( 'jquery-slick', get_template_directory_uri() . '/assets/js/slick/slick.min.js', array( 'jquery' ), '1.6.0', true );
