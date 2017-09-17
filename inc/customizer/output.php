@@ -182,8 +182,10 @@ add_action( 'wp_head', 'arctic_black_customizer_style_placeholder', 15 );
  */
 function arctic_black_editor_style( $mceInit ) {
 
-	$primary_color 			= get_theme_mod( 'primary_color', '#f06292' );
-	$secondary_color 		= get_theme_mod( 'secondary_color', '#f7a8c2' );
+	$setting = arctic_black_setting_default();
+
+	$primary_color 			= get_theme_mod( 'primary_color', $setting['primary_color'] );
+	$secondary_color 		= get_theme_mod( 'secondary_color', $setting['secondary_color'] );
 
 	$styles = '';
 	$styles .= '.mce-content-body a{ color: ' . esc_attr( $primary_color ) . '; }';
