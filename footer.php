@@ -24,16 +24,11 @@ $setting = arctic_black_setting_default();
 
 		<?php get_template_part( 'template-parts/footer', 'social' );?>
 
-		<p class="site-info">
-			<?php arctic_black_do_footer_copyright();?>
-		</p><!-- .site-info -->
-		<p class="site-design">
-			<?php echo sprintf( __( 'Theme design by %s.', 'arctic-black' ), '<a href="'. esc_url( 'https://elevate360.com.au/' ) .'">Elevate</a>' );?>
-		</p>
+		<?php arctic_black_do_footer_copyright();?>
 
 	</footer><!-- #colophon -->
 
-	<?php get_sidebar( 'after-footer' );?>
+	<?php get_sidebar( 'instagram' );?>
 
 </div><!-- #page -->
 

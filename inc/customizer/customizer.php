@@ -44,6 +44,7 @@ function arctic_black_setting_default(){
 		'post_tag'			=> true,
 		'author_display'	=> true,
 		'posts_navigation'	=> 'posts_navigation',
+		'theme_designer'	=> true,
 		'footer_image'		=> get_template_directory_uri() . '/assets/images/footer-image.jpg',
 	);
 

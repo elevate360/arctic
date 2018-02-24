@@ -65,17 +65,17 @@ figure {
 }
 
 ::-moz-selection {
-	color: #fff; 
+	color: #fff;
 	background: #f06292;
 }
 
 ::selection {
-	color: #fff; 
+	color: #fff;
 	background: #f06292;
 }
 
 ::-moz-selection {
-	color: #fff; 
+	color: #fff;
 	background: #f06292;
 }
 
@@ -108,7 +108,7 @@ dd {
 }
 
 table {
-	width: 100%; 
+	width: 100%;
 	margin: 0 0 1.5em;
 }
 
@@ -142,6 +142,7 @@ thead th {
 	min-height: 0;
 	margin-bottom: 1.5em;
 }
+
 .table-responsive > table {
 	margin: 0;
 }
@@ -179,7 +180,7 @@ pre {
 	overflow: auto;
 	max-width: 100%;
 	margin-bottom: 1.6em;
-	padding: 1.6em; 
+	padding: 1.6em;
 	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 15px;
@@ -218,14 +219,17 @@ a {
 	-webkit-transition: color 0.25s ease-in-out, background 0.25s ease-in-out, opacity 0.25s ease-in-out;
 	transition: color 0.25s ease-in-out, background 0.25s ease-in-out, opacity 0.25s ease-in-out;
 }
+
 a:hover,
 a:focus,
 a:active {
 	color: #f06292;
 }
+
 a:focus {
 	outline: thin dashed;
 }
+
 a:hover,
 a:active {
 	outline: 0;
@@ -236,25 +240,61 @@ a:active {
 .comment-content .wp-smiley {
 	margin-top: 0;
 	margin-bottom: 0;
-	padding: 0; 
+	padding: 0;
 	border: none;
 }
 
 /* Make sure embeds and iframes fit their containers. */
+
 embed,
 iframe,
 object {
 	max-width: 100%;
 }
 
+/** SVG icon */
+
 .icon {
 	display: inline-block;
-	width: 1em;
-	height: 1em;
+	position: relative; /* Align more nicely with capital letters */
+	top: -0.0625rem;
+	width: 1rem;
+	height: 1rem;
+	vertical-align: middle;
+	-webkit-transition: opacity ease-in-out 0.25s;
+	transition: opacity ease-in-out 0.25s;
 
-	fill: currentColor; 
+	fill: currentColor;
+}
+
+.icon-stroke {
+	display: inline-block;
+	position: relative; /* Align more nicely with capital letters */
+	top: -0.05em;
+	width: 1rem;
+	height: 1rem;
+	vertical-align: middle;
+	-webkit-transition: opacity ease-in-out 0.25s;
+	transition: opacity ease-in-out 0.25s;
+
+	fill: none;
 	stroke: currentColor;
-	stroke-width: 0;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 6.25%;
+}
+
+svg,
+svg symbol {
+	overflow: visible;
+}
+
+.svg-fallback {
+	display: none;
+}
+
+.no-svg .svg-fallback {
+	display: inline-block;
 }
 
 
@@ -269,27 +309,31 @@ object {
 	padding: 0.5em;
 	border: 1px solid #eceff1;
 	border-bottom-width: 3px;
-	border-radius: 3px; 
+	border-radius: 3px;
 	background-color: #fff;
 }
+
 .wp-caption img[class*="wp-image-"] {
 	display: block;
-	margin-right: auto; 
+	margin-right: auto;
 	margin-left: auto;
 }
+
 .wp-caption > a {
 	display: block;
 }
+
 .wp-caption > a img {
 	vertical-align: middle;
 }
+
 .wp-caption > a:hover img,
 .wp-caption > a:focus img {
 	opacity: 0.5;
 }
 
 .wp-caption-text {
-	margin-bottom: 0; 
+	margin-bottom: 0;
 	padding: 1em 1em 0.5em;
 	font-size: 14px;
 	font-size: 0.875rem;
@@ -308,9 +352,10 @@ object {
 .gallery-item {
 	float: left;
 	overflow: hidden;
-	position: relative; 
+	position: relative;
 	margin: 0 4px 4px 0;
 }
+
 .gallery-item img {
 	vertical-align: middle;
 }
@@ -384,7 +429,7 @@ object {
 	left: 0;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	width: 100%; 
+	width: 100%;
 	max-height: 50%;
 	margin: 0;
 	padding: 6px 8px;
@@ -400,7 +445,7 @@ object {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%; 
+	width: 100%;
 	height: 100%;
 	min-height: 49px;
 	content: "";

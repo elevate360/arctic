@@ -1,0 +1,129 @@
+.wpcf7 {
+	margin: 0;
+	padding: 0;
+	label {
+		display: block;
+	}
+}
+
+.wpcf7-response-output {
+	margin: 2rem 0.5rem 1rem;
+	padding: 0.2rem 1rem;
+}
+
+.wpcf7 .screen-reader-response {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	width: 1px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.wpcf7-mail-sent-ok,
+.wpcf7-mail-sent-ng,
+.wpcf7-spam-blocked,
+.wpcf7-validation-errors {
+    background-color: #f44336;
+    color: #fff;
+    @include font-size( 0.875 );
+    padding: .5rem 1rem;
+    margin: 0 0 1.5em;
+    position: relative;
+    list-style-type: none;
+    width: auto;
+    overflow: hidden;
+    border-radius: .25rem;
+}
+
+.wpcf7-mail-sent-ok {
+	background-color: #4caf50;
+}
+
+.wpcf7-form-control-wrap {
+	position: relative;
+	display: block;
+}
+
+span.wpcf7-not-valid-tip {
+	color: #f00;
+	font-size: 1em;
+	display: block;
+}
+
+.use-floating-validation-tip span.wpcf7-not-valid-tip {
+	position: absolute;
+	top: 20%;
+	left: 20%;
+	z-index: 100;
+	border: 1px solid rgba( 0,0,0,.05 );
+	background: #fff;
+	padding: .2rem .8rem;
+}
+
+span.wpcf7-list-item {
+	display: block;
+	margin-bottom: .5rem;
+}
+
+.wpcf7-file {
+	background-color: rgba( 0,0,0,.05 );
+	padding: .5rem;
+	width: 100%;
+}
+
+.wpcf7-list-item-label {
+	margin-left: .5rem;
+}
+
+.wpcf7-display-none {
+	display: none;
+}
+
+.wpcf7 .ajax-loader {
+
+	&.is-active {
+	    position: relative;
+	    width: 24px;
+	    height: 24px;
+	    display: inline-block;
+	    margin: 0 10px;
+	    top: 8px;
+		&::before {
+			content: " ";
+			border: 2px solid #aaa;
+			border-radius: 50%;
+			border-top-color: $color__link;
+			width: 24px;
+			height: 24px;
+			position: absolute;
+			top: 0;
+			left: 0;
+	    	transform: translate(-50%, -50%);
+			animation: spin 2s linear infinite;
+		}
+	}
+
+}
+
+.wpcf7 .ajax-loader.is-active {
+	visibility: visible;
+}
+
+.wpcf7 .ajax-error {
+	display: none;
+}
+
+.wpcf7 .placeheld {
+	color: $color__text-secondary;
+}
+
+.wpcf7-recaptcha {
+	margin-bottom: 1.5rem;
+	iframe {
+		margin-bottom: 0;
+	}
+}
+

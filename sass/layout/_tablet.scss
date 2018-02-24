@@ -32,11 +32,14 @@
 	.comment-form-author,
 	.comment-form-email,
 	.comment-form-url {
-		@include span( 3 of 9 );
+	    float: left;
+	    width: 31.8181818182%;
+	    margin-right: 2.2727272727%;
 	}
 
 	.comment-form-url {
-		@include last;
+	    float: right;
+	    margin-right: 0;
 	}
 
 	.form-submit input[type="submit"] {
@@ -45,11 +48,14 @@
 
 	#footer-widget-1,
 	#footer-widget-2 {
-		@include span( 6 of 12 );
+		float: left;
+		width: 49.1525423729%;
+		margin-right: 1.6949152542%;
 	}
 
 	#footer-widget-2 {
-		@include last;
+	    float: right;
+	    margin-right: 0;
 	}
 
 	#secondary {

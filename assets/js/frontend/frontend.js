@@ -1,69 +1,51 @@
-/**
- * File skip-link-focus-fix.js.
- *
- * Helps with accessibility for keyboard only users.
- *
- * Learn more: https://git.io/vWdr2
- */
-(function() {
-	var isIe = /(trident|msie)/i.test( navigator.userAgent );
-
-	if ( isIe && document.getElementById && window.addEventListener ) {
-		window.addEventListener( 'hashchange', function() {
-			var id = location.hash.substring( 1 ),
-				element;
-
-			if ( ! ( /^[A-z0-9_-]+$/.test( id ) ) ) {
-				return;
-			}
-
-			element = document.getElementById( id );
-
-			if ( element ) {
-				if ( ! ( /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) ) ) {
-					element.tabIndex = -1;
-				}
-
-				element.focus();
-			}
-		}, false );
-	}
-})();
-
-( function() {
-	var container, button, body;
-
-	container = document.getElementById( 'site-navigation' );
-	if ( ! container ) {
-		return;
-	}
-
-	button = container.getElementsByTagName( 'button' )[0];
-	if ( 'undefined' === typeof button ) {
-		return;
-	}
-
-	body = document.getElementsByTagName( 'body' )[0];
-
-
-	button.onclick = function() {
-		if ( -1 !== body.className.indexOf( 'sidebar-toggled' ) ) {
-			body.className = body.className.replace( ' sidebar-toggled', ' sidebar-closed' );
-		} else {
-			body.className = body.className.replace( ' sidebar-closed', '' );
-			body.className += ' sidebar-toggled';
-		}
-	};
-
-} )();
-
-/**
- * Plugins methode
- */
 ( function( $ ) {
 
-	function smoothScroll(){
-		$('a[href*="#content"]').click(function(event) {
+	var arcticBlack = arcticBlack || {};
+
+	arcticBlack.init = function() {
+
+		arcticBlack.$body 	= $( document.body );
+		arcticBlack.$window = $( window );
+		arcticBlack.$html 	= $( 'html' );
+
+		this.inlineSVG();
+		this.fitVids();
+		this.smoothScroll();
+		this.thumbFocus();
+		this.featuredSlider();
+		this.footerSlider();
+
+	};
+
+	arcticBlack.supportsInlineSVG = function() {
+
+		var div = document.createElement( 'div' );
+		div.innerHTML = '<svg/>';
+		return 'http://www.w3.org/2000/svg' === ( 'undefined' !== typeof SVGRect && div.firstChild && div.firstChild.namespaceURI );
+
+	};
+
+	arcticBlack.inlineSVG = function() {
+
+		if ( true === arcticBlack.supportsInlineSVG() ) {
+			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
+		}
+
+	};
+
+	arcticBlack.fitVids = function() {
+
+		$( '#page' ).fitVids({
+			customSelector: 'iframe[src^="https://videopress.com"]'
+		});
+
+	};
+
+	arcticBlack.smoothScroll = function() {
+
+		var $smoothScroll 		= $( 'a[href*="#site-navigation"], a[href*="#content"], a[href*="#tertiary"]' );
+
+		$smoothScroll.click(function(event) {
 	        // On-page links
 	        if (
 	            location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') &&
@@ -86,30 +68,26 @@
 	                    if ($target.is(':focus')) { // Checking if the target was focused
 	                        return false;
 	                    } else {
-	                        $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+	                        $target.attr( 'tabindex', '-1' ); // Adding tabindex for elements not focusable
 	                        $target.focus(); // Set focus again
 	                    }
 	                });
 	            }
 	        }
 		});
-	}
 
-	function thumbFocus(){
+	};
+
+	arcticBlack.thumbFocus = function() {
+
 		$( '.entry' ).find( 'a' ).on( 'hover focus blur', function( e ) {
 			e.preventDefault();
 			$( this ).parent().prev('.post-thumbnail').toggleClass( 'focus' );
 		} );
-	}
 
-	function run_fitVids(){
-		var vidElement = $( '#page' );
-		vidElement.fitVids({
-			customSelector: 'iframe[src^="https://videopress.com"]'
-		});
-	}
+	};
 
-	function slick__featured_contents(){
+	arcticBlack.featuredSlider = function() {
 
 		var prev__btn = '<button type="button" data-role="none" class="arctic-slick-prev" aria-label="Previous" tabindex="0" role="button"></button>',
 			next__btn = '<button type="button" data-role="none" class="arctic-slick-next" aria-label="Next" tabindex="0" role="button"></button>';
@@ -139,9 +117,9 @@
 			]
 		});
 
-	}
+	};
 
-	function slick__instagram_footer() {
+	arcticBlack.footerSlider = function() {
 
 		$( '#quaternary .instagram-pics' ).not('.slick-initialized').slick({
 			infinite: true,
@@ -174,22 +152,15 @@
 			]
 		});
 
-	}
+	};
 
-	$(document).ready(function(){
-
-		// Wrap table with div
-		// $( 'table' ).wrap( '<div class="table-responsive"></div>' );
-
-		smoothScroll();
-		thumbFocus();
-		run_fitVids();
-		slick__featured_contents();
-		slick__instagram_footer();
+	/** Initialize arcticBlack.init() */
+	$( function() {
+		arcticBlack.init();
 	});
 
 	$( document.body ).on( 'post-load', function () {
-		thumbFocus();
+		arcticBlack.thumbFocus();
 	});
 
-})( jQuery );
+} )( jQuery );

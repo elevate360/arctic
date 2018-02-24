@@ -12,6 +12,7 @@ if ( ! function_exists( 'arctic_black_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function arctic_black_posted_on() {
+
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -211,8 +212,8 @@ function arctic_black_posts_navigation(){
 		) );
 	} else {
 		the_posts_pagination( array(
-			'prev_text'          => __( '<span class="fa fa-angle-left"></span><span class="screen-reader-text">Previous Page</span>', 'arctic-black' ),
-			'next_text'          => __( '<span class="fa fa-angle-right"></span><span class="screen-reader-text">Next Page</span>', 'arctic-black' ),
+			'prev_text'          => sprintf( '%s <span class="screen-reader-text">%s</span>', arctic_black_get_svg( array( 'icon' => 'chevron-left' ) ), __( 'Previous Page', 'arctic-black' ) ),
+			'next_text'          => sprintf( '%s <span class="screen-reader-text">%s</span>', arctic_black_get_svg( array( 'icon' => 'chevron-right' ) ), __( 'Next Page', 'arctic-black' ) ),
 			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'arctic-black' ) . ' </span>',
 		) );
 	}
@@ -220,39 +221,42 @@ function arctic_black_posts_navigation(){
 }
 endif;
 
-if ( ! function_exists( 'arctic_black_footer_copyright' ) ) :
+if( ! function_exists( 'arctic_black_get_footer_copyright' ) ) :
 /**
- * [arctic_black_footer_copyright description]
+ * [arctic_black_get_footer_copyright description]
  * @return [type] [description]
  */
-function arctic_black_footer_copyright(){
-
-	$footer_copyright =	sprintf( __( 'Copyright &copy; %1$s %2$s. Proudly powered by %3$s.', 'arctic-black' ),
+function arctic_black_get_footer_copyright(){
+	$default_footer_copyright =	sprintf( __( 'Copyright &copy; %1$s %2$s. Proudly powered by %3$s.', 'arctic-black' ),
 		date_i18n( __('Y', 'arctic-black' ) ),
 		'<a href="'. esc_url( home_url() ) .'">'. esc_attr( get_bloginfo( 'name' ) ) .'</a>',
 		'<a href="'. esc_url( 'https://wordpress.org/' ) .'">WordPress</a>' );
 
-	echo apply_filters( 'arctic_black_footer_copyright', $footer_copyright );
+	apply_filters( 'arctic_black_get_footer_copyright', $default_footer_copyright );
 
-}
-endif;
-
-if ( ! function_exists( 'arctic_black_do_footer_copyright' ) ) :
-/**
- * Render footer copyright
- *
- * @return string
- */
-function arctic_black_do_footer_copyright(){
-
-	$footer_copyright = get_theme_mod( 'footer_copyright' );
+	$footer_copyright = get_theme_mod( 'footer_copyright', $default_footer_copyright );
 
 	if ( !empty( $footer_copyright ) ) {
 		$footer_copyright = str_replace( '[YEAR]', date_i18n( __('Y', 'arctic-black' ) ), $footer_copyright );
 		$footer_copyright = str_replace( '[SITE]', '<a href="'. esc_url( home_url() ) .'">'. esc_attr( get_bloginfo( 'name' ) ) .'</a>', $footer_copyright );
-		echo htmlspecialchars_decode( esc_attr( $footer_copyright ) );
+		return htmlspecialchars_decode( esc_attr( $footer_copyright ) );
 	} else {
-		arctic_black_footer_copyright();
+		return $default_footer_copyright;
+	}
+
+}
+endif;
+
+if( ! function_exists( 'arctic_black_do_footer_copyright' ) ) :
+/**
+ * [arctic_black_do_footer_copyright description]
+ * @return [type] [description]
+ */
+function arctic_black_do_footer_copyright(){
+
+	echo '<div class="site-info">'. arctic_black_get_footer_copyright() . '</div>';
+	if ( get_theme_mod( 'theme_designer', true ) ) {
+		echo '<div class="site-designer">'. sprintf( __( 'Theme design by %1$s %2$s.', 'arctic-black' ), arctic_black_get_svg( array( 'icon' => 'campaignkit' ) ), '<a href="'. esc_url( 'https://campaignkit.co/' ) .'">Campaign Kit</a>' ) .'</div>';
 	}
 
 }

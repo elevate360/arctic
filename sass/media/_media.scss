@@ -14,13 +14,43 @@ object {
 	max-width: 100%;
 }
 
+/** SVG icon */
 .icon {
 	display: inline-block;
-	width: 1em;
-	height: 1em;
-	stroke-width: 0;
-	stroke: currentColor;
 	fill: currentColor;
+	height: 1rem;
+	position: relative; /* Align more nicely with capital letters */
+	top: -0.0625rem;
+	vertical-align: middle;
+	width: 1rem;
+	transition: opacity ease-in-out .25s;
+}
+
+.icon-stroke {
+	display: inline-block;
+	fill: none;
+	height: 1rem;
+	position: relative; /* Align more nicely with capital letters */
+	vertical-align: middle;
+	top: -0.05em;
+	width: 1rem;
+    stroke-width: 6.25%;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+	stroke: currentColor;
+	transition: opacity ease-in-out .25s;
+}
+
+svg, svg symbol {
+    overflow: visible;
+}
+
+.svg-fallback {
+	display: none;
+}
+
+.no-svg .svg-fallback {
+	display: inline-block;
 }
 
 /*--------------------------------------------------------------

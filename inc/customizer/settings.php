@@ -350,6 +350,24 @@ function arctic_black_customize_register( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting(
+		'theme_designer' ,
+		 array(
+		    'default' 			=> $setting['theme_designer'],
+		    'transport'			=> 'postMessage',
+		    'sanitize_callback' => 'arctic_black_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control(
+		'theme_designer',
+		array(
+			'label'    => __( 'Display theme designer at footer?', 'arctic-black' ),
+			'section'  => 'footer_area',
+			'settings' => 'theme_designer',
+			'type'     => 'checkbox'
+		)
+	);
+
     if ( isset( $wp_customize->selective_refresh ) ) {
 
 		$wp_customize->selective_refresh->add_partial(
@@ -366,7 +384,7 @@ function arctic_black_customize_register( $wp_customize ) {
 			array(
 				'selector' 				=> '.site-info',
 				'settings' 				=> array( 'footer_copyright' ),
-				'render_callback' 		=> 'arctic_black_do_footer_copyright',
+				'render_callback' 		=> 'arctic_black_get_footer_copyright',
 				'container_inclusive'	=> false,
 		) );
 

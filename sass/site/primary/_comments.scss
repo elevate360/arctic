@@ -97,36 +97,6 @@
 	}
 }
 
-#cancel-comment-reply-link {
-	display: block;
-	position: absolute;
-	text-align:center;
-	top: 0;
-	right: 0;
-	width: 32px;
-	height: 32px;
-	overflow: hidden;
-	&:before {
-		background-color: $color__text-main;
-		content: '\f00d';
-		color: #fff;
-		line-height: 32px;
-		width: 32px;
-		height: 32px;
-		display: block;
-		speak: none;
-		text-align: center;
-		text-decoration: inherit;
-		text-transform: none;
-		vertical-align: top;
-		border-radius: 32px;
-	}
-	&:hover:before,
-	&:focus:before {
-		background-color: $color__link;
-	}
-}
-
 .comment-reply-title {
 	text-transform: uppercase;
 	position: relative;

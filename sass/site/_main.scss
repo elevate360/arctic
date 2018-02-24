@@ -126,7 +126,7 @@
 }
 
 .site-info,
-.site-design {
+.site-designer {
 	text-transform: uppercase;
 	@include font-size(0.875);
 	letter-spacing: .1rem;
@@ -143,6 +143,7 @@
 	color: $color__text-secondary;
 	position: relative;
 	overflow: hidden;
+	padding-bottom: 1.5rem;
 	z-index: 0;
 	a {
 		color: #fff;

@@ -57,31 +57,6 @@
 	}
 }
 
-.widget_recent_entries li:before {
-    content: '\f0f6';
-    margin-right: .5rem;
-}
-
-.widget_archive li:before {
-    content: '\f133';
-    margin-right: .5rem;
-}
-
-.widget_categories li::before {
-    content: '\f114';
-    margin-right: .5rem;
-}
-
-.widget_pages li::before {
-    content: '\f016';
-    margin-right: .5rem;
-}
-
-.widget_recent_comments li::before {
-    content: '\f0e6';
-    margin-right: .5rem;
-}
-
 .widget_nav_menu {
 	ul,
 	li {
@@ -153,11 +128,6 @@
 		border-color: $color__link;
 		color: #fff;
 	}
-}
-
-.null-instagram-feed .widget-more-link a:before {
-	content: "\f16d";
-	margin-right: 5px;
 }
 
 .null-instagram-feed {

@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php if( arctic_black_is_sticky() ) : ?>
-			<span class="sticky-label"><i class="fa fa-star"></i></span>
+			<span class="sticky-label"><?php echo arctic_black_get_svg( array( 'icon' => 'star' ) );?></span>
 		<?php endif;?>
 		<?php if ( has_post_thumbnail() ) :?>
 			<div class="post-thumbnail">

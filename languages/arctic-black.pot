@@ -1,27 +1,17 @@
-# <!=Copyright (C) 2017 Elevate360
+# <!=Copyright (C) 2018 Elevate360
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Arctic Black 1.0.0\n"
-"Report-Msgid-Bugs-To: https://github.com/elevate360/arctic/issues/new\n"
-"POT-Creation-Date: 2017-09-17 18:54:47+00:00\n"
+"Project-Id-Version: Arctic Black 1.0.3\n"
+"Report-Msgid-Bugs-To: https://elevate360/contact\n"
+"POT-Creation-Date: 2018-02-24 18:22:27+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
-"Last-Translator: LANGUAGE <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-Language: English\n"
-"X-Poedit-Country: UNITED STATES\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-KeywordsList: "
-"__;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c;_nc:4c,1,2;_"
-"x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
-"X-Textdomain-Support: yes\n"
-"X-Generator: grunt-wp-i18n1.0.0\n"
+"X-Generator: grunt-wp-i18n1.0.1\n"
 
 #: 404.php:17
 msgid "Oops! That page can&rsquo;t be found."
@@ -33,20 +23,21 @@ msgid ""
 "links below or a search?"
 msgstr ""
 
-#: comments.php:53 comments.php:70
+#: comments.php:34
+#. translators: 1: title.
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#: comments.php:50 comments.php:67
 msgid "&larr; Older comments"
 msgstr ""
 
-#: comments.php:54 comments.php:71
+#: comments.php:51 comments.php:68
 msgid "Newer comments &rarr;"
 msgstr ""
 
-#: comments.php:80
+#: comments.php:77
 msgid "Comments are closed."
-msgstr ""
-
-#: footer.php:31
-msgid "Theme design by %s."
 msgstr ""
 
 #: functions.php:65
@@ -61,7 +52,7 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:123 functions.php:132 functions.php:141 functions.php:150
+#: functions.php:123 functions.php:132 functions.php:141 functions.php:152
 msgid "Add widgets here."
 msgstr ""
 
@@ -73,8 +64,8 @@ msgstr ""
 msgid "Footer 2"
 msgstr ""
 
-#: functions.php:148
-msgid "After Footer"
+#: functions.php:150
+msgid "Instagram widget"
 msgstr ""
 
 #: header.php:26
@@ -223,55 +214,63 @@ msgstr ""
 msgid "Use [YEAR] for dynamic current year. Use [SITE] to render site link."
 msgstr ""
 
+#: inc/customizer/settings.php:364
+msgid "Display theme designer at footer?"
+msgstr ""
+
 #: inc/extras.php:83
 #. Translators: Used as a placeholder for untitled posts on non-singular views.
 msgid "(Untitled)"
 msgstr ""
 
-#: inc/template-tags.php:50 inc/template-tags.php:56
+#: inc/icons.php:39
+msgid "Please define default parameters in the form of an array."
+msgstr ""
+
+#: inc/icons.php:44
+msgid "Please define an SVG icon filename."
+msgstr ""
+
+#: inc/template-tags.php:51 inc/template-tags.php:57
 #. translators: used between list items, there is a space after the comma
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:52
+#: inc/template-tags.php:53
 msgid "Posted in %1$s"
 msgstr ""
 
-#: inc/template-tags.php:58
+#: inc/template-tags.php:59
 msgid "Tagged %1$s"
 msgstr ""
 
-#: inc/template-tags.php:65
+#: inc/template-tags.php:66
 #. translators: %s: post title
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
-#: inc/template-tags.php:72 template-parts/content-page.php:34
+#: inc/template-tags.php:73 template-parts/content-page.php:34
 #. translators: %s: Name of current post
 msgid "Edit %s"
 msgstr ""
 
-#: inc/template-tags.php:209
+#: inc/template-tags.php:210
 msgid "&larr; Older posts"
 msgstr ""
 
-#: inc/template-tags.php:210
+#: inc/template-tags.php:211
 msgid "Newer posts &rarr;"
 msgstr ""
 
-#: inc/template-tags.php:214
-msgid ""
-"<span class=\"fa fa-angle-left\"></span><span "
-"class=\"screen-reader-text\">Previous Page</span>"
-msgstr ""
-
 #: inc/template-tags.php:215
-msgid ""
-"<span class=\"fa fa-angle-right\"></span><span "
-"class=\"screen-reader-text\">Next Page</span>"
+msgid "Previous Page"
 msgstr ""
 
 #: inc/template-tags.php:216
+msgid "Next Page"
+msgstr ""
+
+#: inc/template-tags.php:217
 msgid "Page"
 msgstr ""
 
@@ -279,8 +278,12 @@ msgstr ""
 msgid "Copyright &copy; %1$s %2$s. Proudly powered by %3$s."
 msgstr ""
 
-#: inc/template-tags.php:231 inc/template-tags.php:251
+#: inc/template-tags.php:231 inc/template-tags.php:240
 msgid "Y"
+msgstr ""
+
+#: inc/template-tags.php:259
+msgid "Theme design by %1$s %2$s."
 msgstr ""
 
 #: inc/vendor/class-tgm-plugin-activation.php:327
@@ -711,29 +714,23 @@ msgid "Elevate360"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://elevate360.com.au/"
+msgid "https://campaignkit.co/"
 msgstr ""
 
-#: comments.php:33
-#. translators: %s: post title
+#: comments.php:40
+#. translators: 1: comment count number, 2: title.
 msgctxt "comments title"
-msgid "One Reply to &ldquo;%s&rdquo;"
-msgstr ""
-
-#: comments.php:37
-#. translators: 1: number of comments, 2: post title
-msgctxt "comments title"
-msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/template-tags.php:28
+#: inc/template-tags.php:29
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
-#: inc/template-tags.php:33
+#: inc/template-tags.php:34
 msgctxt "post author"
 msgid "by %s"
 msgstr ""

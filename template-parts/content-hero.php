@@ -29,7 +29,7 @@ $has_post_thumbnail = ( is_singular() && has_post_thumbnail( get_the_id() ) || i
 
 	<?php if ( !empty( $has_post_thumbnail ) ) : ?>
 		<div class="scroll-to-content">
-			<a href="#content"><span class="fa fa-angle-down"></span></a>
+			<a href="#content"><?php echo arctic_black_get_svg( array( 'icon' => 'chevron-down' ) );?></span></a>
 		</div>
 	<?php endif;?>
 

@@ -2,9 +2,9 @@
 
 Contributors: elevate360
 Requires at least: 4.7
-Tested up to: 4.8
-Stable tag: 1.1.0
-Version: 1.2.0
+Tested up to: 4.9
+Stable tag: 1.0.3
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Tags: one-column, flexible-header, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready, blog
@@ -31,23 +31,27 @@ Create a fantastic, bold and sleek looking website design using Arctic.
 
 == Frequently Asked Questions ==
 
-= How to change Atlantic theme fonts?
+= How to change Arctic Black theme fonts?
 You can easily install and use Easy Google Fonts plugin.
 
 == Changelog ==
-= 1.2.0 - September 18, 2017 =
-* Major update
-* Added WooCommerce support
+
+= 1.0.3 - February 25, 2018 =
+* Updated Footer copyright and theme credits
+* Updated Fontawesome css and use svg
+* Updated `style.css`
+* Updated `readme.md` and `readme.txt`
+* Updated `package.json` and `gruntfile.js` for development
 
 = 1.0.0 - August 6, 2017 =
 * Initial release
 
 == Credits ==
 
-Atlantic WordPress Theme, Copyright 2016 WordPress.org
-Atlantic is distributed under the terms of the GNU GPL
+Arctic Black WordPress Theme, Copyright 2016 WordPress.org
+Arctic Black is distributed under the terms of the GNU GPL
 
-Atlantic bundles the following third-party resources:
+Arctic Black bundles the following third-party resources:
 
 Based on Underscores, (C) 2012-2017 Automattic, Inc.
 **License:** GPLv2 or later
@@ -81,23 +85,14 @@ Slick by [Ken Wheeler](https://github.com/kenwheeler)
 **License:** MIT
 Source: http://kenwheeler.github.io/slick/
 
-Hybrid Media Grabber by [Justin Tadlock](https://github.com/justintadlock)
-**License:** GPL-2.0+
-Source: https://github.com/justintadlock/hybrid-core/blob/master/inc/class-media-grabber.php
-
-Genericons Neue by [Automattic](https://github.com/Automattic/genericons-neue)
-**License:** GPL-2.0+
-Source: https://github.com/Automattic/genericons-neue
-
-Social Logos by [Automattic](https://github.com/Automattic/social-logos)
-**License:** GPL-2.0+
-Source: https://github.com/Automattic/social-logos
+- FontAwesome by [Dave Gandy](http://twitter.com/davegandy)
+**License:** SIL & MIT
+Source: https://fontawesome.com/
 
 - Screenshot image, Pixabay
 **License:** CC0 1.0 Universal (CC0 1.0)
 Source:
-https://www.pexels.com/photo/beautiful-blur-bouquet-carefree-573302/
-https://www.pexels.com/photo/art-astronomy-atmosphere-aurora-borealis-360912/
+https://www.pexels.com/photo/scenic-view-of-dramatic-sky-during-winter-258112/
 
 ### V.1.0.0
 
