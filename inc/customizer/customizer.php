@@ -26,6 +26,17 @@ function arctic_black_customize_preview_js() {
 add_action( 'customize_preview_init', 'arctic_black_customize_preview_js' );
 
 /**
+ * Additional customizer control scripts.
+ */
+function arctic_black_customizer_control() {
+
+	$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+	wp_enqueue_script( 'arctic-black-customizer-control', get_parent_theme_file_uri( "/assets/js/customizer-control$suffix.js" ), array(), time(), true );
+
+}
+add_action( 'customize_controls_enqueue_scripts', 'arctic_black_customizer_control', 15 );
+
+/**
  * [arctic_black_setting_default description]
  * @return [type] [description]
  */

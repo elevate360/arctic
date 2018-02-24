@@ -37,6 +37,20 @@ function arctic_black_customize_register( $wp_customize ) {
 	$wp_customize->get_section( 'colors' )->panel 						= 'theme_settings';
 
 
+	// Load custom sections.
+	require_once( get_parent_theme_file_path( "/inc/customizer/controls/class-section-pro.php" ) );
+
+	// Register custom section types.
+	$wp_customize->register_section_type( 'Arctic_Black_Customize_Section_Pro' );
+
+	// Register sections.
+	$wp_customize->add_section( new Arctic_Black_Customize_Section_Pro( $wp_customize, 'arctic_black_pro', array(
+		'title'    			=> esc_html__( 'Campaign Kit', 'atlantic' ),
+		'pro_text' 			=> esc_html__( 'Learn More', 'atlantic' ),
+		'pro_url'  			=> esc_url( 'https://campaignkit.co/' ),
+		'priority'			=> 999
+	) ) );
+
 	/** Theme Colors */
 	$wp_customize->add_setting(
 		'primary_color',

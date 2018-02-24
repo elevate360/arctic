@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctic Black 1.0.3\n"
 "Report-Msgid-Bugs-To: https://elevate360/contact\n"
-"POT-Creation-Date: 2018-02-24 18:22:27+00:00\n"
+"POT-Creation-Date: 2018-02-24 19:07:14+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -90,131 +90,139 @@ msgstr ""
 msgid "Theme Settings"
 msgstr ""
 
-#: inc/customizer/settings.php:52
+#: inc/customizer/settings.php:48
+msgid "Campaign Kit"
+msgstr ""
+
+#: inc/customizer/settings.php:49
+msgid "Learn More"
+msgstr ""
+
+#: inc/customizer/settings.php:66
 msgid "Link Color"
 msgstr ""
 
-#: inc/customizer/settings.php:53
+#: inc/customizer/settings.php:67
 msgid "Used for link, button "
 msgstr ""
 
-#: inc/customizer/settings.php:70
+#: inc/customizer/settings.php:84
 msgid "Hover Color"
 msgstr ""
 
-#: inc/customizer/settings.php:71
+#: inc/customizer/settings.php:85
 msgid "Used for link:hover, button:hover, selection."
 msgstr ""
 
-#: inc/customizer/settings.php:82
+#: inc/customizer/settings.php:96
 msgid "Content Slider"
 msgstr ""
 
-#: inc/customizer/settings.php:97
+#: inc/customizer/settings.php:111
 msgid "Enable Content Slider"
 msgstr ""
 
-#: inc/customizer/settings.php:114
+#: inc/customizer/settings.php:128
 msgid "Select Category"
 msgstr ""
 
-#: inc/customizer/settings.php:131
+#: inc/customizer/settings.php:145
 msgid "Number of posts to display"
 msgstr ""
 
-#: inc/customizer/settings.php:152 inc/customizer/settings.php:177
+#: inc/customizer/settings.php:166 inc/customizer/settings.php:191
 msgid "Orderby"
 msgstr ""
 
-#: inc/customizer/settings.php:157
+#: inc/customizer/settings.php:171
 msgid "Post ID"
 msgstr ""
 
-#: inc/customizer/settings.php:158
+#: inc/customizer/settings.php:172
 msgid "Author"
 msgstr ""
 
-#: inc/customizer/settings.php:159
+#: inc/customizer/settings.php:173
 msgid "Date"
 msgstr ""
 
-#: inc/customizer/settings.php:160
+#: inc/customizer/settings.php:174
 msgid "Title"
 msgstr ""
 
-#: inc/customizer/settings.php:161
+#: inc/customizer/settings.php:175
 msgid "Comment count"
 msgstr ""
 
-#: inc/customizer/settings.php:162
+#: inc/customizer/settings.php:176
 msgid "Last Modified Date"
 msgstr ""
 
-#: inc/customizer/settings.php:163
+#: inc/customizer/settings.php:177
 msgid "Random"
 msgstr ""
 
-#: inc/customizer/settings.php:182
+#: inc/customizer/settings.php:196
 msgid "Lowest to highest values"
 msgstr ""
 
-#: inc/customizer/settings.php:183
+#: inc/customizer/settings.php:197
 msgid "Highest to lowest values"
 msgstr ""
 
-#: inc/customizer/settings.php:192
+#: inc/customizer/settings.php:206
 msgid "Blog Setting"
 msgstr ""
 
-#: inc/customizer/settings.php:208
+#: inc/customizer/settings.php:222
 msgid "Display Post Date"
 msgstr ""
 
-#: inc/customizer/settings.php:226
+#: inc/customizer/settings.php:240
 msgid "Display Post Author"
 msgstr ""
 
-#: inc/customizer/settings.php:244
+#: inc/customizer/settings.php:258
 msgid "Display Post Category"
 msgstr ""
 
-#: inc/customizer/settings.php:262
+#: inc/customizer/settings.php:276
 msgid "Display Post Tag"
 msgstr ""
 
-#: inc/customizer/settings.php:280
+#: inc/customizer/settings.php:294
 msgid "Display Author biography at single post"
 msgstr ""
 
-#: inc/customizer/settings.php:298
+#: inc/customizer/settings.php:312
 msgid "Posts Navigation"
 msgstr ""
 
-#: inc/customizer/settings.php:303
+#: inc/customizer/settings.php:317
 msgid "Prev / Next"
 msgstr ""
 
-#: inc/customizer/settings.php:304
+#: inc/customizer/settings.php:318
 msgid "Numeric"
 msgstr ""
 
-#: inc/customizer/settings.php:313
+#: inc/customizer/settings.php:327
 msgid "Footer"
 msgstr ""
 
-#: inc/customizer/settings.php:329
+#: inc/customizer/settings.php:343
 msgid "Footer widgets background"
 msgstr ""
 
-#: inc/customizer/settings.php:345
+#: inc/customizer/settings.php:359
 msgid "Footer copyright"
 msgstr ""
 
-#: inc/customizer/settings.php:346
+#: inc/customizer/settings.php:360
 msgid "Use [YEAR] for dynamic current year. Use [SITE] to render site link."
 msgstr ""
 
-#: inc/customizer/settings.php:364
+#: inc/customizer/settings.php:378
 msgid "Display theme designer at footer?"
 msgstr ""
 

@@ -81,7 +81,7 @@ Source: https://www.pexels.com/photo/scenic-view-of-dramatic-sky-during-winter-2
 
 ## Changelog
 
-### 1.0.3 - February 25, 2018 =
+### 1.0.3 - February 25, 2018
 * Updated Footer copyright and theme credits
 * Updated Fontawesome css and use svg
 * Updated `style.css`
