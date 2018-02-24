@@ -94,7 +94,3 @@ Source: https://fontawesome.com/
 Source:
 https://www.pexels.com/photo/scenic-view-of-dramatic-sky-during-winter-258112/
 
-### V.1.0.0
-
-- Initial release
-

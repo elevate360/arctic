@@ -45,8 +45,8 @@ function arctic_black_customize_register( $wp_customize ) {
 
 	// Register sections.
 	$wp_customize->add_section( new Arctic_Black_Customize_Section_Pro( $wp_customize, 'arctic_black_pro', array(
-		'title'    			=> esc_html__( 'Campaign Kit', 'atlantic' ),
-		'pro_text' 			=> esc_html__( 'Learn More', 'atlantic' ),
+		'title'    			=> esc_html__( 'Campaign Kit', 'arctic-black' ),
+		'pro_text' 			=> esc_html__( 'Learn More', 'arctic-black' ),
 		'pro_url'  			=> esc_url( 'https://campaignkit.co/' ),
 		'priority'			=> 999
 	) ) );
