@@ -1,0 +1,18 @@
+#customize-controls .control-section-arctic-black-pro .accordion-section-title {
+	&,
+	&:hover,
+	&:focus {
+		background-color: #fff!important;
+	}
+}
+
+.control-section-arctic-black-pro .accordion-section-title .button {
+	margin-top:  -4px;
+	font-weight: 400;
+	margin-left: 8px;
+}
+
+.rtl .control-section-arctic-black-pro .accordion-section-title .button {
+	margin-left:  0;
+	margin-right: 8px;
+}

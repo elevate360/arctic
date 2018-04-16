@@ -13,7 +13,7 @@ class Arctic_Black_Customize_Section_Pro extends WP_Customize_Section {
 	 * @access public
 	 * @var    string
 	 */
-	public $type = 'arctic_black_pro';
+	public $type = 'arctic-black-pro';
 	/**
 	 * Custom button text to output.
 	 *

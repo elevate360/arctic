@@ -15,8 +15,8 @@ if ( get_theme_mod( 'enable_slider' ) == false ) {
 $arctic_black_featured = new WP_Query( array(
 	'cat'     			=> absint( get_theme_mod( 'slider_cat', 1 ) ),
 	'posts_per_page' 	=> absint( get_theme_mod( 'slides_num', 5 ) ),
-	'orderby'        	=> get_theme_mod( 'slider_orderby', 'date' ),
-	'order'          	=> get_theme_mod( 'slider_order', 'DESC' ),
+	'orderby'        	=> esc_attr( get_theme_mod( 'slider_orderby', 'date' ) ),
+	'order'          	=> esc_attr( get_theme_mod( 'slider_order', 'DESC' ) ),
 	'post__not_in' 		=> get_option( 'sticky_posts' ),
 	'no_found_rows'  	=> true,
 ) );

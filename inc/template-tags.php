@@ -26,11 +26,13 @@ function arctic_black_posted_on() {
 	);
 
 	$posted_on = sprintf(
+		// Translators: %s: Post date
 		esc_html_x( 'Posted on %s', 'post date', 'arctic-black' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
+		// Translators: %s: The author
 		esc_html_x( 'by %s', 'post author', 'arctic-black' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
@@ -50,12 +52,14 @@ function arctic_black_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'arctic-black' ) );
 		if ( $categories_list && arctic_black_categorized_blog() ) {
+			// Translators:: %1$s: Categories list
 			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'arctic-black' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'arctic-black' ) );
 		if ( $tags_list ) {
+			// Translators:: %1$s: Tags list
 			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'arctic-black' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
@@ -185,7 +189,7 @@ function arctic_black_post_thumbnail( $size = 'post-thumbnail') {
 		echo '</div>';
 	} else {
 		echo '<div class="post-thumbnail">';
-			echo '<a href="'. get_permalink( get_the_id() ) .'">';
+			echo '<a href="'. esc_url( get_permalink( get_the_id() ) ) .'">';
 				the_post_thumbnail( $size );
 			echo '</a>';
 		echo '</div>';
@@ -207,14 +211,16 @@ function arctic_black_posts_navigation(){
 
 	if ( get_theme_mod( 'posts_navigation', 'posts_navigation' ) == 'posts_navigation' ) {
 		the_posts_navigation( array(
-            'prev_text'          => __( '&larr; Older posts', 'arctic-black' ),
-            'next_text'          => __( 'Newer posts &rarr;', 'arctic-black' ),
+            'prev_text'          => esc_html__( '&larr; Older posts', 'arctic-black' ),
+            'next_text'          => esc_html__( 'Newer posts &rarr;', 'arctic-black' ),
 		) );
 	} else {
 		the_posts_pagination( array(
-			'prev_text'          => sprintf( '%s <span class="screen-reader-text">%s</span>', arctic_black_get_svg( array( 'icon' => 'chevron-left' ) ), __( 'Previous Page', 'arctic-black' ) ),
-			'next_text'          => sprintf( '%s <span class="screen-reader-text">%s</span>', arctic_black_get_svg( array( 'icon' => 'chevron-right' ) ), __( 'Next Page', 'arctic-black' ) ),
-			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'arctic-black' ) . ' </span>',
+			// Translators: %1$s: Arrow left icon, %2$s: Previous page
+			'prev_text'          => sprintf( '%1$s <span class="screen-reader-text">%2$s</span>', arctic_black_get_svg( array( 'icon' => 'chevron-left' ) ), esc_html__( 'Previous Page', 'arctic-black' ) ),
+			// Translators: %1$s: Arrow left icon, %2$s: Previous page
+			'next_text'          => sprintf( '%1$s <span class="screen-reader-text">%2$s</span>', arctic_black_get_svg( array( 'icon' => 'chevron-right' ) ), esc_html__( 'Next Page', 'arctic-black' ) ),
+			'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'arctic-black' ) . ' </span>',
 		) );
 	}
 
@@ -227,9 +233,10 @@ if( ! function_exists( 'arctic_black_get_footer_copyright' ) ) :
  * @return [type] [description]
  */
 function arctic_black_get_footer_copyright(){
+	// Translators: %1$s: Dynamic year, %2$s: Site link, %3$s: WordPress link
 	$default_footer_copyright =	sprintf( __( 'Copyright &copy; %1$s %2$s. Proudly powered by %3$s.', 'arctic-black' ),
-		date_i18n( __('Y', 'arctic-black' ) ),
-		'<a href="'. esc_url( home_url() ) .'">'. esc_attr( get_bloginfo( 'name' ) ) .'</a>',
+		date_i18n( __( 'Y', 'arctic-black' ) ),
+		'<a href="'. esc_url( home_url('/') ) .'">'. esc_attr( get_bloginfo( 'name' ) ) .'</a>',
 		'<a href="'. esc_url( 'https://wordpress.org/' ) .'">WordPress</a>' );
 
 	apply_filters( 'arctic_black_get_footer_copyright', $default_footer_copyright );
@@ -237,9 +244,9 @@ function arctic_black_get_footer_copyright(){
 	$footer_copyright = get_theme_mod( 'footer_copyright', $default_footer_copyright );
 
 	if ( !empty( $footer_copyright ) ) {
-		$footer_copyright = str_replace( '[YEAR]', date_i18n( __('Y', 'arctic-black' ) ), $footer_copyright );
-		$footer_copyright = str_replace( '[SITE]', '<a href="'. esc_url( home_url() ) .'">'. esc_attr( get_bloginfo( 'name' ) ) .'</a>', $footer_copyright );
-		return htmlspecialchars_decode( esc_attr( $footer_copyright ) );
+		$footer_copyright = str_replace( '[YEAR]', date_i18n( __( 'Y', 'arctic-black' ) ), $footer_copyright );
+		$footer_copyright = str_replace( '[SITE]', '<a href="'. esc_url( home_url('/') ) .'">'. esc_attr( get_bloginfo( 'name' ) ) .'</a>', $footer_copyright );
+		return wp_kses_post( $footer_copyright );
 	} else {
 		return $default_footer_copyright;
 	}
@@ -254,9 +261,10 @@ if( ! function_exists( 'arctic_black_do_footer_copyright' ) ) :
  */
 function arctic_black_do_footer_copyright(){
 
-	echo '<div class="site-info">'. arctic_black_get_footer_copyright() . '</div>';
+	echo '<div class="site-info">'. wp_kses_post( arctic_black_get_footer_copyright() ) . '</div>';
 	if ( get_theme_mod( 'theme_designer', true ) ) {
-		echo '<div class="site-designer">'. sprintf( __( 'Theme design by %1$s %2$s.', 'arctic-black' ), arctic_black_get_svg( array( 'icon' => 'campaignkit' ) ), '<a href="'. esc_url( 'https://campaignkit.co/' ) .'">Campaign Kit</a>' ) .'</div>';
+		// Translators: %1$s: Theme designer logo, %2$s: Theme designer site link
+		echo '<div class="site-designer">'. sprintf( esc_html__( 'Theme design by %1$s %2$s.', 'arctic-black' ), arctic_black_get_svg( array( 'icon' => 'campaignkit' ) ), '<a href="'. esc_url( 'https://campaignkit.co/' ) .'">Campaign Kit</a>' ) .'</div>';
 	}
 
 }

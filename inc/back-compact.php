@@ -34,8 +34,9 @@ add_action( 'after_switch_theme', 'arctic_black_switch_theme' );
  * @global string $wp_version WordPress version.
  */
 function arctic_black_upgrade_notice() {
-	$message = sprintf( __( 'Arctic requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'arctic-black' ), $GLOBALS['wp_version'] );
-	printf( '<div class="error"><p>%s</p></div>', $message );
+	// Translators: %s: Current WordPress version
+	$message = sprintf( esc_html__( 'Arctic Black requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'arctic-black' ), absint( $GLOBALS['wp_version'] ) );
+	printf( '<div class="error"><p>%s</p></div>', wp_kses_post( $message ) );
 }
 
 /**
@@ -46,7 +47,8 @@ function arctic_black_upgrade_notice() {
  * @global string $wp_version WordPress version.
  */
 function arctic_black_customize() {
-	wp_die( sprintf( __( 'Arctic requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'arctic-black' ), $GLOBALS['wp_version'] ), '', array(
+	// Translators: %s: Current WordPress version
+	wp_die( sprintf( esc_html__( 'Arctic Black requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'arctic-black' ), absint( $GLOBALS['wp_version'] ) ), '', array(
 		'back_link' => true,
 	) );
 }
@@ -61,7 +63,8 @@ add_action( 'load-customize.php', 'arctic_black_customize' );
  */
 function arctic_black_preview() {
 	if ( isset( $_GET['preview'] ) ) {
-		wp_die( sprintf( __( 'Arctic requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'arctic-black' ), $GLOBALS['wp_version'] ) );
+		// Translators: %s: Current WordPress version
+		wp_die( sprintf( esc_html__( 'Arctic Black requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'arctic-black' ), absint( $GLOBALS['wp_version'] ) ) );
 	}
 }
 add_action( 'template_redirect', 'arctic_black_preview' );

@@ -138,6 +138,16 @@
 	margin-bottom: 0;
 }
 
+.site-designer {
+	margin-top: .5rem;
+	.icon-campaignkit {
+		fill: $color__campaign-kit!important;
+	}
+	a {
+		font-weight: bold;
+	}
+}
+
 .site-footer {
 	background-color: $color__background-footer;
 	color: $color__text-secondary;

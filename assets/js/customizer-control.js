@@ -1,15 +1,15 @@
-( function( api ) {
+(function(api) {
 
-	api.sectionConstructor['arctic_black_pro'] = api.Section.extend( {
+    api.sectionConstructor['arctic-black-pro'] = api.Section.extend({
 
-		// No events for this type of section.
-		attachEvents: function () {},
+        // No events for this type of section.
+        attachEvents: function() {},
 
-		// Always make the section active.
-		isContextuallyActive: function () {
-			return true;
-		}
+        // Always make the section active.
+        isContextuallyActive: function() {
+            return true;
+        }
 
-	} );
+    });
 
-} )( wp.customize );
+})(wp.customize);

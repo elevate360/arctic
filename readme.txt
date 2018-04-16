@@ -3,7 +3,7 @@
 Contributors: elevate360
 Requires at least: 4.7
 Tested up to: 4.9
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -36,8 +36,14 @@ You can easily install and use Easy Google Fonts plugin.
 
 == Changelog ==
 
+= 1.0.4 - April 16, 2018 =
+* Updated based on theme review [#51821](https://themes.trac.wordpress.org/ticket/51821#comment:2)
+* Updated `readme.md` and `readme.txt`
+* Updated `package.json` and `gruntfile.js` for development
+
 = 1.0.3 - February 25, 2018 =
 * Updated Footer copyright and theme credits
+* Updated Customizer credit link
 * Updated Fontawesome css and use svg
 * Updated `style.css`
 * Updated `readme.md` and `readme.txt`

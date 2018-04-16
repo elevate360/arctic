@@ -31,6 +31,9 @@ add_action( 'customize_preview_init', 'arctic_black_customize_preview_js' );
 function arctic_black_customizer_control() {
 
 	$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
+	wp_enqueue_style( 'arctic-black-customizer-control', get_parent_theme_file_uri( "/assets/css/customizer-control$suffix.css" ), array(), time(), 'all' );
+
 	wp_enqueue_script( 'arctic-black-customizer-control', get_parent_theme_file_uri( "/assets/js/customizer-control$suffix.js" ), array(), time(), true );
 
 }
