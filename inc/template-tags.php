@@ -237,13 +237,13 @@ function arctic_black_get_footer_copyright(){
 	$default_footer_copyright =	sprintf( __( 'Copyright &copy; %1$s %2$s. Proudly powered by %3$s.', 'arctic-black' ),
 		date_i18n( __( 'Y', 'arctic-black' ) ),
 		'<a href="'. esc_url( home_url('/') ) .'">'. esc_attr( get_bloginfo( 'name' ) ) .'</a>',
-		'<a href="'. esc_url( 'https://wordpress.org/' ) .'">WordPress</a>' );
+		'<a href="'. esc_url( __( 'https://wordpress.org/', 'arctic-black' ) ) .'">'. __( 'WordPress', 'arctic-black' ) .'</a>' );
 
 	apply_filters( 'arctic_black_get_footer_copyright', $default_footer_copyright );
 
 	$footer_copyright = get_theme_mod( 'footer_copyright', $default_footer_copyright );
 
-	if ( !empty( $footer_copyright ) ) {
+	if ( ! empty( $footer_copyright ) ) {
 		$footer_copyright = str_replace( '[YEAR]', date_i18n( __( 'Y', 'arctic-black' ) ), $footer_copyright );
 		$footer_copyright = str_replace( '[SITE]', '<a href="'. esc_url( home_url('/') ) .'">'. esc_attr( get_bloginfo( 'name' ) ) .'</a>', $footer_copyright );
 		return wp_kses_post( $footer_copyright );
