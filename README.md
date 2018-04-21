@@ -33,7 +33,7 @@ Create a fantastic, bold and sleek looking website design using Arctic.
 
 ### How to change Arctic Black theme fonts?
 You can easily install and use Easy Google Fonts plugin.
-###
+###
 ## Changelog ##
 
 ### 1.0.4 - April 16, 2018 ###

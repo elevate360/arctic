@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arctic Black 1.0.4\n"
 "Report-Msgid-Bugs-To: https://campaignkit.co/contact\n"
-"POT-Creation-Date: 2018-04-16 19:31:34+00:00\n"
+"POT-Creation-Date: 2018-04-21 08:51:12+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -718,10 +718,6 @@ msgstr ""
 msgid "Arctic Black"
 msgstr ""
 
-#. Theme URI of the plugin/theme
-msgid "http://campaignkit.co/themes/arctic-black/"
-msgstr ""
-
 #. Description of the plugin/theme
 msgid ""
 "The Arctic Black theme is built for photographers and designers with a "
@@ -736,10 +732,6 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "Elevate360"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://campaignkit.co/"
 msgstr ""
 
 #: comments.php:40
