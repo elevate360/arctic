@@ -245,7 +245,7 @@ module.exports = function (grunt) {
 					to: 'Version: <%= pkg.version %>'
 				} ]
 			},
-			readme: {
+			stable: {
 				src: [
 					'readme.txt'
 				],
@@ -253,6 +253,16 @@ module.exports = function (grunt) {
 				replacements: [ {
 					from: /^.*Stable tag:.*$/m,
 					to: 'Stable tag: <%= pkg.version %>'
+				} ]
+			},
+			version: {
+				src: [
+					'readme.txt'
+				],
+				overwrite: true,
+				replacements: [ {
+					from: /^.*Version:.*$/m,
+					to: 'Version: <%= pkg.version %>'
 				} ]
 			}
 		},

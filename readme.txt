@@ -3,8 +3,8 @@
 Contributors: elevate360
 Requires at least: 4.7
 Tested up to: 4.9
-Stable tag: 1.0.4
-Version: 1.0.3
+Stable tag: 1.0.5
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Tags: one-column, flexible-header, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready, blog
@@ -35,6 +35,9 @@ Create a fantastic, bold and sleek looking website design using Arctic.
 You can easily install and use Easy Google Fonts plugin.
 
 == Changelog ==
+
+= 1.0.5 - April 21, 2018 =
+* Updated based on theme review [#51821](https://themes.trac.wordpress.org/ticket/51821#comment:8)
 
 = 1.0.4 - April 16, 2018 =
 * Updated based on theme review [#51821](https://themes.trac.wordpress.org/ticket/51821#comment:2)
